@@ -9,6 +9,7 @@
 #ifndef MSDefine_h
 #define MSDefine_h
 
-#define LAST_RUN_VERSION_KEY   @"last_run_version_of_application"   //最后运行的版本
+//最后运行的版本
+#define LAST_RUN_VERSION_KEY   @"last_run_version_of_application"
 
 #endif /* MSDefine_h */

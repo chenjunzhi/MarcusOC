@@ -49,8 +49,8 @@
     [self tabBarItem:tabBarItem1 title:NSLocalizedString(@"tabBarDiscovery", nil) image:img_icon_tabbar_discovery_normal selectedImage:img_icon_tabbar_discovery_selected];
     [self tabBarItem:tabBarItem2 title:NSLocalizedString(@"tabBarMy", nil) image:img_icon_tabbar_my_normal selectedImage:img_icon_tabbar_my_selected];
     
-    self.tabBar.backgroundColor = color_tabBar_text_normal;
-    self.tabBar.tintColor = color_tabBar_text_selected;
+    self.tabBar.backgroundColor = color_tabBar_background_normal;
+    self.tabBar.tintColor = color_tabBar_background_selected;
     
     self.selectedIndex = 0;
 
