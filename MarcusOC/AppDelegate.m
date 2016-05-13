@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MSHeader.h"
+#import "MSRootViewController.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +19,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    MSRootViewController *rootViewController = [[MSRootViewController alloc]init];
+    self.window.rootViewController = rootViewController;
+    
 
     return YES;
 }

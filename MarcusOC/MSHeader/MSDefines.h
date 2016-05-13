@@ -4,7 +4,7 @@
 //
 //  Created by marcus on 16/5/12.
 //  Copyright © 2016年 marcus. All rights reserved.
-//  全局宏定义
+//  app宏定义
 
 #ifndef MSDefine_h
 #define MSDefine_h
