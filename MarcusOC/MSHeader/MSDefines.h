@@ -12,4 +12,7 @@
 //最后运行的版本
 #define LAST_RUN_VERSION_KEY   @"last_run_version_of_application"
 
+//弹出显示框 显示时间
+#define PROGRESS_HUD_DELAY  2.0f
+
 #endif /* MSDefine_h */

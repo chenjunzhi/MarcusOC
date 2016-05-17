@@ -12,5 +12,8 @@
 #import "MSDefines.h"
 #import "MSColors.h"
 #import "MSImages.h"
+#import "MSFoundation.h"
+
+#import "MSProgressManager.h"
 
 #endif /* MSHeader_h */

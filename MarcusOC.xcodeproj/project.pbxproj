@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C097E221CEAC4DE00324DF0 /* loading-hu.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2C097E211CEAC4DE00324DF0 /* loading-hu.gif */; };
+		2C199C9D1CE96E4800303BBC /* MSComponent说明 in Resources */ = {isa = PBXBuildFile; fileRef = 2C199C9C1CE96E4800303BBC /* MSComponent说明 */; };
+		2C199CBA1CE9C20E00303BBC /* MSProgressManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C199CB91CE9C20E00303BBC /* MSProgressManager.m */; };
 		2C4EC1F91CE5812D00D6AF6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EC1F81CE5812D00D6AF6B /* main.m */; };
 		2C4EC1FC1CE5812D00D6AF6B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EC1FB1CE5812D00D6AF6B /* AppDelegate.m */; };
-		2C4EC1FF1CE5812D00D6AF6B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EC1FE1CE5812D00D6AF6B /* ViewController.m */; };
-		2C4EC2021CE5812D00D6AF6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C4EC2001CE5812D00D6AF6B /* Main.storyboard */; };
 		2C4EC2041CE5812D00D6AF6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C4EC2031CE5812D00D6AF6B /* Assets.xcassets */; };
 		2C4EC2071CE5812D00D6AF6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C4EC2051CE5812D00D6AF6B /* LaunchScreen.storyboard */; };
 		2C4EC2121CE5812D00D6AF6B /* MarcusOCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EC2111CE5812D00D6AF6B /* MarcusOCTests.m */; };
@@ -66,13 +67,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C097E211CEAC4DE00324DF0 /* loading-hu.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "loading-hu.gif"; sourceTree = "<group>"; };
+		2C199C9C1CE96E4800303BBC /* MSComponent说明 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "MSComponent说明"; sourceTree = "<group>"; };
+		2C199CB81CE9C20E00303BBC /* MSProgressManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSProgressManager.h; sourceTree = "<group>"; };
+		2C199CB91CE9C20E00303BBC /* MSProgressManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSProgressManager.m; sourceTree = "<group>"; };
 		2C4EC1F41CE5812D00D6AF6B /* MarcusOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarcusOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C4EC1F81CE5812D00D6AF6B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2C4EC1FA1CE5812D00D6AF6B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2C4EC1FB1CE5812D00D6AF6B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2C4EC1FD1CE5812D00D6AF6B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2C4EC1FE1CE5812D00D6AF6B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		2C4EC2011CE5812D00D6AF6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2C4EC2031CE5812D00D6AF6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C4EC2061CE5812D00D6AF6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C4EC2081CE5812D00D6AF6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -166,6 +168,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2C097E201CEAC4C200324DF0 /* Gifs */ = {
+			isa = PBXGroup;
+			children = (
+				2C097E211CEAC4DE00324DF0 /* loading-hu.gif */,
+			);
+			path = Gifs;
+			sourceTree = "<group>";
+		};
+		2C199CA61CE99CC900303BBC /* MSProgressManager */ = {
+			isa = PBXGroup;
+			children = (
+				2C199CB81CE9C20E00303BBC /* MSProgressManager.h */,
+				2C199CB91CE9C20E00303BBC /* MSProgressManager.m */,
+			);
+			path = MSProgressManager;
+			sourceTree = "<group>";
+		};
 		2C4EC1EB1CE5812C00D6AF6B = {
 			isa = PBXGroup;
 			children = (
@@ -239,9 +258,6 @@
 			children = (
 				2C4EC1FA1CE5812D00D6AF6B /* AppDelegate.h */,
 				2C4EC1FB1CE5812D00D6AF6B /* AppDelegate.m */,
-				2C4EC1FD1CE5812D00D6AF6B /* ViewController.h */,
-				2C4EC1FE1CE5812D00D6AF6B /* ViewController.m */,
-				2C4EC2001CE5812D00D6AF6B /* Main.storyboard */,
 				2C4EC2051CE5812D00D6AF6B /* LaunchScreen.storyboard */,
 				2C4EC2081CE5812D00D6AF6B /* Info.plist */,
 			);
@@ -260,7 +276,9 @@
 		2C4EC2361CE5833100D6AF6B /* MSComponent */ = {
 			isa = PBXGroup;
 			children = (
+				2C199C9C1CE96E4800303BBC /* MSComponent说明 */,
 				2C4EC2371CE5833100D6AF6B /* MSRequstManager */,
+				2C199CA61CE99CC900303BBC /* MSProgressManager */,
 			);
 			path = MSComponent;
 			sourceTree = "<group>";
@@ -330,6 +348,7 @@
 			children = (
 				2CE477411CE5A3B000BAB436 /* Images */,
 				2CE4773E1CE5A04100BAB436 /* Strings */,
+				2C097E201CEAC4C200324DF0 /* Gifs */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -613,8 +632,10 @@
 				2CE4775D1CE5A3B000BAB436 /* icon_tabbar_my_selected@3x.png in Resources */,
 				2C4EC2071CE5812D00D6AF6B /* LaunchScreen.storyboard in Resources */,
 				2CE477521CE5A3B000BAB436 /* icon_tabbar_discovery_normal@2x.png in Resources */,
+				2C097E221CEAC4DE00324DF0 /* loading-hu.gif in Resources */,
 				2CE477501CE5A3B000BAB436 /* icon_tabbar_discovery_newMessage@2x.png in Resources */,
 				2CE477581CE5A3B000BAB436 /* icon_tabbar_home_selected@2x.png in Resources */,
+				2C199C9D1CE96E4800303BBC /* MSComponent说明 in Resources */,
 				2CE4776E1CE5A66D00BAB436 /* 项目说明 in Resources */,
 				2CE4775A1CE5A3B000BAB436 /* icon_tabbar_my_normal@2x.png in Resources */,
 				2CE477531CE5A3B000BAB436 /* icon_tabbar_discovery_normal@3x.png in Resources */,
@@ -628,7 +649,6 @@
 				2CE4778C1CE5ACD200BAB436 /* MSViewController.xib in Resources */,
 				2C4EC2041CE5812D00D6AF6B /* Assets.xcassets in Resources */,
 				2CE477541CE5A3B000BAB436 /* icon_tabbar_discovery_selected@2x.png in Resources */,
-				2C4EC2021CE5812D00D6AF6B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,9 +724,9 @@
 				2CE4778B1CE5ACD200BAB436 /* MSViewController.m in Sources */,
 				2CE4779A1CE5ADD500BAB436 /* MSMyViewController.m in Sources */,
 				2CE477951CE5ADA200BAB436 /* MSDiscoveryViewController.m in Sources */,
+				2C199CBA1CE9C20E00303BBC /* MSProgressManager.m in Sources */,
 				2CE477691CE5A63200BAB436 /* NSArray+MSCategory.m in Sources */,
 				2CE4776C1CE5A63200BAB436 /* NSString+MSCategory.m in Sources */,
-				2C4EC1FF1CE5812D00D6AF6B /* ViewController.m in Sources */,
 				2C4EC1FC1CE5812D00D6AF6B /* AppDelegate.m in Sources */,
 				2C4EC2431CE5833100D6AF6B /* MSRequstManager.m in Sources */,
 				2CE4776B1CE5A63200BAB436 /* NSSet+MSCategory.m in Sources */,
@@ -749,14 +769,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2C4EC2001CE5812D00D6AF6B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2C4EC2011CE5812D00D6AF6B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2C4EC2051CE5812D00D6AF6B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

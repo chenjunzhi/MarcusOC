@@ -133,7 +133,7 @@ fprintf(stderr, "-- Completion: %s\n", (__Seccuse_ ? @"YES" : @"NO").UTF8String)
 {
     if (block)
     {
-//        [TNToast showLoadingToast];
+        [MSProgressManager showLoading];
     }
     [self asynAPIRequest:url params:nil method:@"GET" blockUserInteraction:block messageDuring:duration withCompeletBlock:complete];
 }
@@ -147,7 +147,7 @@ fprintf(stderr, "-- Completion: %s\n", (__Seccuse_ ? @"YES" : @"NO").UTF8String)
 {
     if (block)
     {
-//        [TNToast showLoadingToast];
+         [MSProgressManager showLoading];
     }
     [self asynAPIRequest:url params:parameters method:@"POST" blockUserInteraction:block messageDuring:duration withCompeletBlock:complete];
 }
@@ -197,11 +197,11 @@ fprintf(stderr, "-- Completion: %s\n", (__Seccuse_ ? @"YES" : @"NO").UTF8String)
         NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:_recordDate];
         _lastInternetSpeed = (double)task.countOfBytesReceived / (NSInteger)(interval * 1000);
         
-//        if (block) [TNToast hideLoadingToast];
+        if (block) [MSProgressManager showLoading];
         NSInteger code = [responseObject[@"Code"] integerValue];
         
         // 清理数据中的 nsnull 对象
-//        responseObject = [responseObject dictionaryWithCleanNSNullValue];
+        responseObject = [responseObject dictionaryWithCleanNSNullValue];
         
         THRequestLog([task.currentRequest.URL.absoluteString stringByRemovingPercentEncoding], method, [self formatParametersForURL:url withParams:params], responseObject, interval);
 
@@ -209,7 +209,7 @@ fprintf(stderr, "-- Completion: %s\n", (__Seccuse_ ? @"YES" : @"NO").UTF8String)
         {
             if (duration > 0)
             {
-//                [TNToast showWithText:@"数据异常，请稍后重试或重启应用" duration:duration];
+                [MSProgressManager showToastStatus:@"数据异常，请稍后重试或重启应用"];
             }
             error = [NSError errorWithDomain:@"THRequestErrorDomain"
                                         code:MSRequstErrorCodeInvalidResponse
@@ -230,7 +230,7 @@ fprintf(stderr, "-- Completion: %s\n", (__Seccuse_ ? @"YES" : @"NO").UTF8String)
                 NSString *message = responseObject[@"Message"];
                 if (message.length && duration > 0)
                 {
-//                    [TNToast showWithText:message duration:duration];
+                    [MSProgressManager showToastStatus:message];
                 }
                 error = [NSError errorWithDomain:@"THRequestErrorDomain"
                                             code:MSRequstErrorCodeAPIError
@@ -253,10 +253,10 @@ fprintf(stderr, "-- Completion: %s\n", (__Seccuse_ ? @"YES" : @"NO").UTF8String)
         NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:_recordDate];
         _lastInternetSpeed = (double)task.countOfBytesReceived / (NSInteger)(interval * 1000);
         
-//        if (block) [TNToast hideLoadingToast];
+        if (block) [MSProgressManager showLoading];
         if (duration > 0)
         {
-//            [TNToast showWithText:@"网络异常，请稍后重试" duration:duration];
+            [MSProgressManager showToastStatus:@"数据异常，请稍后重试或重启应用"];
         }
         THRequestError([task.currentRequest.URL.absoluteString stringByRemovingPercentEncoding], method, [self formatParametersForURL:url withParams:params], error.domain, error, nil);
         if (complete)
@@ -268,7 +268,7 @@ fprintf(stderr, "-- Completion: %s\n", (__Seccuse_ ? @"YES" : @"NO").UTF8String)
     // 设置请求头
     [self formatRequestHeader];
     
-//    if (block) [TNToast showLoadingToast];
+    if (block) [MSProgressManager showLoading];
     
     //    如果是POST请求，分离URL中的参数信息, 重建参数列表
     if ([method isEqualToString:@"POST"])
@@ -335,8 +335,7 @@ fprintf(stderr, "-- Completion: %s\n", (__Seccuse_ ? @"YES" : @"NO").UTF8String)
 - (NSDictionary *)formatParametersForURL:(NSString *)url withParams:(NSDictionary *)params
 {
 //    清除参数中的NSNull对象
-//    NSMutableDictionary *fixedParams = [(params? [params dictionaryWithCleanNSNullValue]: @{}) mutableCopy];
-    NSMutableDictionary *fixedParams = [(params? params: @{}) mutableCopy];
+    NSMutableDictionary *fixedParams = [(params? [params dictionaryWithCleanNSNullValue]: @{}) mutableCopy];
 
 //    分离URL中的参数信息
     NSArray *urlComponents = [[url stringByReplacingOccurrencesOfString:@" " withString:@""] componentsSeparatedByString:@"?"];

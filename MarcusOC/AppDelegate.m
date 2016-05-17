@@ -23,8 +23,9 @@
     
     MSRootViewController *rootViewController = [[MSRootViewController alloc]init];
     self.window.rootViewController = rootViewController;
-    
+    [self.window makeKeyAndVisible];
 
+    [self setupFrameworks];
     return YES;
 }
 
@@ -71,6 +72,12 @@
         [defaults setObject:currentVersion forKey:LAST_RUN_VERSION_KEY];
         return YES;    }
     return NO;
+}
+
+//初始化三方插件
+- (void)setupFrameworks {
+    //设置显示框风格
+//    [MSProgressManager setProgressStyle];
 }
 
 @end

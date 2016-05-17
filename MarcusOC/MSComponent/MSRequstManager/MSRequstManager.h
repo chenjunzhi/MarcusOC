@@ -11,6 +11,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MSHeader.h"
 
 typedef enum : NSUInteger {
     MSRequstErrorCodeNoneError = 1,                       // 请求成功

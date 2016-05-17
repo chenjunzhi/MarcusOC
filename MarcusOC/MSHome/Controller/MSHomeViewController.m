@@ -7,6 +7,7 @@
 //
 
 #import "MSHomeViewController.h"
+#import "MSHeader.h"
 
 @interface MSHomeViewController ()
 
@@ -24,14 +25,32 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)click:(UIButton *)sender {
+    [MSProgressManager showLoading];
 }
-*/
+
+- (IBAction)click1:(UIButton *)sender {
+    
+    [MSProgressManager showInfoWithStatus:@"测试数据"];
+
+}
+
+- (IBAction)click2:(UIButton *)sender {
+    [MSProgressManager showToastStatus:@"测试数据测试数据"];
+}
+
+- (IBAction)backClick:(UIButton *)sender {
+    [MSProgressManager hideLoading];
+}
+
+- (IBAction)progressClick:(UIButton *)sender {
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
+        for (int i = 0; i<=10; i++) {
+//            NSLog([NSString stringWithFormat:@"数据：%d",i]);
+            [MSProgressManager showProgress:(i/10.0) mode:MSProgressModeRingShaped status:@"loading..."];
+            sleep(1);
+        }
+    });
+}
 
 @end
