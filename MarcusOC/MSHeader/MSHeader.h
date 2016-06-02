@@ -13,6 +13,7 @@
 #import "MSColors.h"
 #import "MSImages.h"
 #import "MSFoundation.h"
+#import "MSUIKit.h"
 
 #import "MSProgressManager.h"
 

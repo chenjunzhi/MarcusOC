@@ -8,8 +8,11 @@
 
 #import "MSHomeViewController.h"
 #import "MSHeader.h"
+#import "Masonry.h"
 
 @interface MSHomeViewController ()
+
+@property (nonatomic, strong) UILabel *label;
 
 @end
 
@@ -17,6 +20,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.view addSubview:self.label];
+    [self.label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view.mas_top).offset(80);
+        make.left.equalTo(self.view.mas_left).offset(15);
+        make.right.equalTo(self.view.mas_right).offset(-15);
+        make.height.equalTo(@15);
+    }];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -26,7 +36,9 @@
 }
 
 - (IBAction)click:(UIButton *)sender {
-    [MSProgressManager showLoading];
+//    [MSProgressManager showLoading];
+
+    
 }
 
 - (IBAction)click1:(UIButton *)sender {
@@ -46,11 +58,17 @@
 - (IBAction)progressClick:(UIButton *)sender {
     dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
         for (int i = 0; i<=10; i++) {
-//            NSLog([NSString stringWithFormat:@"数据：%d",i]);
             [MSProgressManager showProgress:(i/10.0) mode:MSProgressModeRingShaped status:@"loading..."];
             sleep(1);
         }
     });
+}
+
+#pragma mark -- getter and setter
+
+- (UILabel *)label {
+    _label = [UILabel label:_label font:[UIFont systemFontOfSize:13] color:[UIColor grayColor] textAlignment:NSTextAlignmentCenter text:@"12344"];
+    return _label;
 }
 
 @end

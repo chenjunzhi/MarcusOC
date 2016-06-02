@@ -17,6 +17,8 @@
 		2C4EC2121CE5812D00D6AF6B /* MarcusOCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EC2111CE5812D00D6AF6B /* MarcusOCTests.m */; };
 		2C4EC21D1CE5812D00D6AF6B /* MarcusOCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EC21C1CE5812D00D6AF6B /* MarcusOCUITests.m */; };
 		2C4EC2431CE5833100D6AF6B /* MSRequstManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EC2391CE5833100D6AF6B /* MSRequstManager.m */; };
+		2C5585E51CFAB7AB001913AA /* UILabel+MSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5585E41CFAB7AB001913AA /* UILabel+MSCategory.m */; };
+		2C5585E81CFABCE8001913AA /* UIButton+MSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5585E71CFABCE8001913AA /* UIButton+MSCategory.m */; };
 		2CE477401CE5A04100BAB436 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CE4773F1CE5A04100BAB436 /* Localizable.strings */; };
 		2CE477501CE5A3B000BAB436 /* icon_tabbar_discovery_newMessage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CE477421CE5A3B000BAB436 /* icon_tabbar_discovery_newMessage@2x.png */; };
 		2CE477511CE5A3B000BAB436 /* icon_tabbar_discovery_newMessage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CE477431CE5A3B000BAB436 /* icon_tabbar_discovery_newMessage@3x.png */; };
@@ -90,6 +92,11 @@
 		2C4EC23C1CE5833100D6AF6B /* MSDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSDefines.h; sourceTree = "<group>"; };
 		2C4EC23D1CE5833100D6AF6B /* MSHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHeader.h; sourceTree = "<group>"; };
 		2C4EC23E1CE5833100D6AF6B /* MSImages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSImages.h; sourceTree = "<group>"; };
+		2C5585E31CFAB7AB001913AA /* UILabel+MSCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+MSCategory.h"; sourceTree = "<group>"; };
+		2C5585E41CFAB7AB001913AA /* UILabel+MSCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+MSCategory.m"; sourceTree = "<group>"; };
+		2C5585E61CFABCE8001913AA /* UIButton+MSCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+MSCategory.h"; sourceTree = "<group>"; };
+		2C5585E71CFABCE8001913AA /* UIButton+MSCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+MSCategory.m"; sourceTree = "<group>"; };
+		2C5585E91CFABD31001913AA /* MSUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSUIKit.h; sourceTree = "<group>"; };
 		2CE4773F1CE5A04100BAB436 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		2CE477421CE5A3B000BAB436 /* icon_tabbar_discovery_newMessage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tabbar_discovery_newMessage@2x.png"; sourceTree = "<group>"; };
 		2CE477431CE5A3B000BAB436 /* icon_tabbar_discovery_newMessage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tabbar_discovery_newMessage@3x.png"; sourceTree = "<group>"; };
@@ -401,6 +408,11 @@
 		2CE477681CE5A63200BAB436 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				2C5585E91CFABD31001913AA /* MSUIKit.h */,
+				2C5585E31CFAB7AB001913AA /* UILabel+MSCategory.h */,
+				2C5585E41CFAB7AB001913AA /* UILabel+MSCategory.m */,
+				2C5585E61CFABCE8001913AA /* UIButton+MSCategory.h */,
+				2C5585E71CFABCE8001913AA /* UIButton+MSCategory.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -723,9 +735,11 @@
 			files = (
 				2CE4778B1CE5ACD200BAB436 /* MSViewController.m in Sources */,
 				2CE4779A1CE5ADD500BAB436 /* MSMyViewController.m in Sources */,
+				2C5585E51CFAB7AB001913AA /* UILabel+MSCategory.m in Sources */,
 				2CE477951CE5ADA200BAB436 /* MSDiscoveryViewController.m in Sources */,
 				2C199CBA1CE9C20E00303BBC /* MSProgressManager.m in Sources */,
 				2CE477691CE5A63200BAB436 /* NSArray+MSCategory.m in Sources */,
+				2C5585E81CFABCE8001913AA /* UIButton+MSCategory.m in Sources */,
 				2CE4776C1CE5A63200BAB436 /* NSString+MSCategory.m in Sources */,
 				2C4EC1FC1CE5812D00D6AF6B /* AppDelegate.m in Sources */,
 				2C4EC2431CE5833100D6AF6B /* MSRequstManager.m in Sources */,

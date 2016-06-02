@@ -5,3 +5,5 @@ platform :ios, '8.0'
  pod 'IQKeyboardManager'
  pod 'MBProgressHUD'
  pod 'FLAnimatedImage'
+ pod 'Masonry'
+
