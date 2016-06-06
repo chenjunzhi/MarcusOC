@@ -15,4 +15,7 @@
 //弹出显示框 显示时间
 #define PROGRESS_HUD_DELAY  2.0f
 
+#define WeatherHeaderURL @"http://op.juhe.cn/onebox/weather/query"
+#define NewsHeaderURL    @"http://op.juhe.cn/onebox/news/query"
+
 #endif /* MSDefine_h */

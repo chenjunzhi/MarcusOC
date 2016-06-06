@@ -10,6 +10,10 @@
 		2C097E221CEAC4DE00324DF0 /* loading-hu.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2C097E211CEAC4DE00324DF0 /* loading-hu.gif */; };
 		2C199C9D1CE96E4800303BBC /* MSComponent说明 in Resources */ = {isa = PBXBuildFile; fileRef = 2C199C9C1CE96E4800303BBC /* MSComponent说明 */; };
 		2C199CBA1CE9C20E00303BBC /* MSProgressManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C199CB91CE9C20E00303BBC /* MSProgressManager.m */; };
+		2C3726101D0543FF00255A9B /* MSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C37260E1D0543FF00255A9B /* MSHomeViewController.m */; };
+		2C3726111D0543FF00255A9B /* MSHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C37260F1D0543FF00255A9B /* MSHomeViewController.xib */; };
+		2C3726151D054EAA00255A9B /* MSWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3726131D054EAA00255A9B /* MSWeatherViewController.m */; };
+		2C3726161D054EAA00255A9B /* MSWeatherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3726141D054EAA00255A9B /* MSWeatherViewController.xib */; };
 		2C4EC1F91CE5812D00D6AF6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EC1F81CE5812D00D6AF6B /* main.m */; };
 		2C4EC1FC1CE5812D00D6AF6B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EC1FB1CE5812D00D6AF6B /* AppDelegate.m */; };
 		2C4EC2041CE5812D00D6AF6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C4EC2031CE5812D00D6AF6B /* Assets.xcassets */; };
@@ -42,8 +46,6 @@
 		2CE4777E1CE5ABE200BAB436 /* MSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE4777B1CE5ABE200BAB436 /* MSRootViewController.m */; };
 		2CE4778B1CE5ACD200BAB436 /* MSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477891CE5ACD200BAB436 /* MSViewController.m */; };
 		2CE4778C1CE5ACD200BAB436 /* MSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CE4778A1CE5ACD200BAB436 /* MSViewController.xib */; };
-		2CE477901CE5AD4500BAB436 /* MSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE4778E1CE5AD4500BAB436 /* MSHomeViewController.m */; };
-		2CE477911CE5AD4500BAB436 /* MSHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CE4778F1CE5AD4500BAB436 /* MSHomeViewController.xib */; };
 		2CE477951CE5ADA200BAB436 /* MSDiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477931CE5ADA200BAB436 /* MSDiscoveryViewController.m */; };
 		2CE477961CE5ADA200BAB436 /* MSDiscoveryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CE477941CE5ADA200BAB436 /* MSDiscoveryViewController.xib */; };
 		2CE4779A1CE5ADD500BAB436 /* MSMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477981CE5ADD500BAB436 /* MSMyViewController.m */; };
@@ -73,6 +75,12 @@
 		2C199C9C1CE96E4800303BBC /* MSComponent说明 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "MSComponent说明"; sourceTree = "<group>"; };
 		2C199CB81CE9C20E00303BBC /* MSProgressManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSProgressManager.h; sourceTree = "<group>"; };
 		2C199CB91CE9C20E00303BBC /* MSProgressManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSProgressManager.m; sourceTree = "<group>"; };
+		2C37260D1D0543FF00255A9B /* MSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeViewController.h; sourceTree = "<group>"; };
+		2C37260E1D0543FF00255A9B /* MSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeViewController.m; sourceTree = "<group>"; };
+		2C37260F1D0543FF00255A9B /* MSHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSHomeViewController.xib; sourceTree = "<group>"; };
+		2C3726121D054EAA00255A9B /* MSWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSWeatherViewController.h; sourceTree = "<group>"; };
+		2C3726131D054EAA00255A9B /* MSWeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSWeatherViewController.m; sourceTree = "<group>"; };
+		2C3726141D054EAA00255A9B /* MSWeatherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSWeatherViewController.xib; sourceTree = "<group>"; };
 		2C4EC1F41CE5812D00D6AF6B /* MarcusOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarcusOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C4EC1F81CE5812D00D6AF6B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2C4EC1FA1CE5812D00D6AF6B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -97,6 +105,7 @@
 		2C5585E61CFABCE8001913AA /* UIButton+MSCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+MSCategory.h"; sourceTree = "<group>"; };
 		2C5585E71CFABCE8001913AA /* UIButton+MSCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+MSCategory.m"; sourceTree = "<group>"; };
 		2C5585E91CFABD31001913AA /* MSUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSUIKit.h; sourceTree = "<group>"; };
+		2C59258D1D05222C00925562 /* MSComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSComponent.h; sourceTree = "<group>"; };
 		2CE4773F1CE5A04100BAB436 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		2CE477421CE5A3B000BAB436 /* icon_tabbar_discovery_newMessage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tabbar_discovery_newMessage@2x.png"; sourceTree = "<group>"; };
 		2CE477431CE5A3B000BAB436 /* icon_tabbar_discovery_newMessage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tabbar_discovery_newMessage@3x.png"; sourceTree = "<group>"; };
@@ -127,9 +136,6 @@
 		2CE477881CE5ACD200BAB436 /* MSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSViewController.h; sourceTree = "<group>"; };
 		2CE477891CE5ACD200BAB436 /* MSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSViewController.m; sourceTree = "<group>"; };
 		2CE4778A1CE5ACD200BAB436 /* MSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSViewController.xib; sourceTree = "<group>"; };
-		2CE4778D1CE5AD4500BAB436 /* MSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeViewController.h; sourceTree = "<group>"; };
-		2CE4778E1CE5AD4500BAB436 /* MSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeViewController.m; sourceTree = "<group>"; };
-		2CE4778F1CE5AD4500BAB436 /* MSHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSHomeViewController.xib; sourceTree = "<group>"; };
 		2CE477921CE5ADA200BAB436 /* MSDiscoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSDiscoveryViewController.h; path = ../MSDiscoveryViewController.h; sourceTree = "<group>"; };
 		2CE477931CE5ADA200BAB436 /* MSDiscoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSDiscoveryViewController.m; path = ../MSDiscoveryViewController.m; sourceTree = "<group>"; };
 		2CE477941CE5ADA200BAB436 /* MSDiscoveryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MSDiscoveryViewController.xib; path = ../MSDiscoveryViewController.xib; sourceTree = "<group>"; };
@@ -284,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				2C199C9C1CE96E4800303BBC /* MSComponent说明 */,
+				2C59258D1D05222C00925562 /* MSComponent.h */,
 				2C4EC2371CE5833100D6AF6B /* MSRequstManager */,
 				2C199CA61CE99CC900303BBC /* MSProgressManager */,
 			);
@@ -453,9 +460,12 @@
 		2CE4777F1CE5ABFB00BAB436 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2CE4778D1CE5AD4500BAB436 /* MSHomeViewController.h */,
-				2CE4778E1CE5AD4500BAB436 /* MSHomeViewController.m */,
-				2CE4778F1CE5AD4500BAB436 /* MSHomeViewController.xib */,
+				2C37260D1D0543FF00255A9B /* MSHomeViewController.h */,
+				2C37260E1D0543FF00255A9B /* MSHomeViewController.m */,
+				2C37260F1D0543FF00255A9B /* MSHomeViewController.xib */,
+				2C3726121D054EAA00255A9B /* MSWeatherViewController.h */,
+				2C3726131D054EAA00255A9B /* MSWeatherViewController.m */,
+				2C3726141D054EAA00255A9B /* MSWeatherViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -654,7 +664,8 @@
 				2CE477401CE5A04100BAB436 /* Localizable.strings in Resources */,
 				2CE477551CE5A3B000BAB436 /* icon_tabbar_discovery_selected@3x.png in Resources */,
 				2CE4775C1CE5A3B000BAB436 /* icon_tabbar_my_selected@2x.png in Resources */,
-				2CE477911CE5AD4500BAB436 /* MSHomeViewController.xib in Resources */,
+				2C3726161D054EAA00255A9B /* MSWeatherViewController.xib in Resources */,
+				2C3726111D0543FF00255A9B /* MSHomeViewController.xib in Resources */,
 				2CE477961CE5ADA200BAB436 /* MSDiscoveryViewController.xib in Resources */,
 				2CE4775B1CE5A3B000BAB436 /* icon_tabbar_my_normal@3x.png in Resources */,
 				2CE477561CE5A3B000BAB436 /* icon_tabbar_home_normal@2x.png in Resources */,
@@ -733,8 +744,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C3726101D0543FF00255A9B /* MSHomeViewController.m in Sources */,
 				2CE4778B1CE5ACD200BAB436 /* MSViewController.m in Sources */,
 				2CE4779A1CE5ADD500BAB436 /* MSMyViewController.m in Sources */,
+				2C3726151D054EAA00255A9B /* MSWeatherViewController.m in Sources */,
 				2C5585E51CFAB7AB001913AA /* UILabel+MSCategory.m in Sources */,
 				2CE477951CE5ADA200BAB436 /* MSDiscoveryViewController.m in Sources */,
 				2C199CBA1CE9C20E00303BBC /* MSProgressManager.m in Sources */,
@@ -745,7 +758,6 @@
 				2C4EC2431CE5833100D6AF6B /* MSRequstManager.m in Sources */,
 				2CE4776B1CE5A63200BAB436 /* NSSet+MSCategory.m in Sources */,
 				2CE4776A1CE5A63200BAB436 /* NSDictionary+MSCategory.m in Sources */,
-				2CE477901CE5AD4500BAB436 /* MSHomeViewController.m in Sources */,
 				2C4EC1F91CE5812D00D6AF6B /* main.m in Sources */,
 				2CE4777E1CE5ABE200BAB436 /* MSRootViewController.m in Sources */,
 			);

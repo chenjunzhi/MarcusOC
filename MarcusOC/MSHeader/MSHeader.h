@@ -17,4 +17,6 @@
 
 #import "MSProgressManager.h"
 
+#import "MSComponent.h"
+
 #endif /* MSHeader_h */

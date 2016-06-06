@@ -203,7 +203,7 @@ fprintf(stderr, "-- Completion: %s\n", (__Seccuse_ ? @"YES" : @"NO").UTF8String)
         // 清理数据中的 nsnull 对象
         responseObject = [responseObject dictionaryWithCleanNSNullValue];
         
-        THRequestLog([task.currentRequest.URL.absoluteString stringByRemovingPercentEncoding], method, [self formatParametersForURL:url withParams:params], responseObject, interval);
+//        THRequestLog([task.currentRequest.URL.absoluteString stringByRemovingPercentEncoding], method, [self formatParametersForURL:url withParams:params], responseObject, interval);
 
         if (!responseObject || (![responseObject isKindOfClass:[NSDictionary class]] && ![responseObject isKindOfClass:[NSArray class]])) // 若解析数据格式异常，返回错误
         {
@@ -281,7 +281,7 @@ fprintf(stderr, "-- Completion: %s\n", (__Seccuse_ ? @"YES" : @"NO").UTF8String)
             url = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
         }
         
-        THRequestLog(url, method, params, nil, 0.f);
+//        THRequestLog(url, method, params, nil, 0.f);
 
         // POST请求时，分离参数中的字符串参数和文件数据
         NSMutableDictionary *values = [params mutableCopy]; // 保存 字符串参数
@@ -309,7 +309,7 @@ fprintf(stderr, "-- Completion: %s\n", (__Seccuse_ ? @"YES" : @"NO").UTF8String)
     }
     else
     {
-        THRequestLog(url, method, params, nil, 0.f);
+//        THRequestLog(url, method, params, nil, 0.f);
 
         // 检查url
         if (![NSURL URLWithString:url]) {

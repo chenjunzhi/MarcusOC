@@ -2,17 +2,14 @@
 //  MSHomeViewController.m
 //  MarcusOC
 //
-//  Created by marcus on 16/5/13.
+//  Created by marcus on 16/6/6.
 //  Copyright © 2016年 marcus. All rights reserved.
 //
 
 #import "MSHomeViewController.h"
-#import "MSHeader.h"
-#import "Masonry.h"
+#import "MSWeatherViewController.h"
 
 @interface MSHomeViewController ()
-
-@property (nonatomic, strong) UILabel *label;
 
 @end
 
@@ -20,13 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view addSubview:self.label];
-    [self.label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top).offset(80);
-        make.left.equalTo(self.view.mas_left).offset(15);
-        make.right.equalTo(self.view.mas_right).offset(-15);
-        make.height.equalTo(@15);
-    }];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -35,40 +25,31 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)click:(UIButton *)sender {
-//    [MSProgressManager showLoading];
-
-    
-}
-
-- (IBAction)click1:(UIButton *)sender {
-    
-    [MSProgressManager showInfoWithStatus:@"测试数据"];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSLog(@"home viewWillAppear %@",self.navigationController.viewControllers);
 
 }
 
-- (IBAction)click2:(UIButton *)sender {
-    [MSProgressManager showToastStatus:@"测试数据测试数据"];
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSLog(@"home viewDidAppear %@",self.navigationController.viewControllers);
+
 }
 
-- (IBAction)backClick:(UIButton *)sender {
-    [MSProgressManager hideLoading];
+- (IBAction)weatherClick:(UIButton *)sender {
+    MSWeatherViewController * weather = [[MSWeatherViewController alloc] init];
+    [self.navigationController pushViewController:weather animated:YES];
 }
 
-- (IBAction)progressClick:(UIButton *)sender {
-    dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
-        for (int i = 0; i<=10; i++) {
-            [MSProgressManager showProgress:(i/10.0) mode:MSProgressModeRingShaped status:@"loading..."];
-            sleep(1);
-        }
-    });
-}
+/*
+#pragma mark - Navigation
 
-#pragma mark -- getter and setter
-
-- (UILabel *)label {
-    _label = [UILabel label:_label font:[UIFont systemFontOfSize:13] color:[UIColor grayColor] textAlignment:NSTextAlignmentCenter text:@"12344"];
-    return _label;
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
+*/
 
 @end

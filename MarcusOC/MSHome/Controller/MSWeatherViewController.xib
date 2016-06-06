@@ -5,8 +5,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MSDiscoveryViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MSWeatherViewController">
             <connections>
+                <outlet property="label" destination="jXi-Vo-8uN" id="qHa-6c-sQ2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,21 +16,21 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发现" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58R-6q-DBG">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXi-Vo-8uN">
                     <rect key="frame" x="279" y="289" width="42" height="21"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="42" id="3cJ-69-7hU"/>
-                        <constraint firstAttribute="height" constant="21" id="YCg-7a-0gS"/>
+                        <constraint firstAttribute="height" constant="21" id="4fM-QI-kRh"/>
+                        <constraint firstAttribute="width" constant="42" id="nuE-GZ-snv"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="58R-6q-DBG" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="lSv-IL-MRR"/>
-                <constraint firstItem="58R-6q-DBG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mho-iq-l8w"/>
+                <constraint firstItem="jXi-Vo-8uN" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="D5j-Ae-4vx"/>
+                <constraint firstItem="jXi-Vo-8uN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Fs5-6i-rFK"/>
             </constraints>
         </view>
     </objects>

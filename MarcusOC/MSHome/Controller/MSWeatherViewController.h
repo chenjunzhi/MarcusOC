@@ -1,5 +1,5 @@
 //
-//  MSHomeViewController.h
+//  MSWeatherViewController.h
 //  MarcusOC
 //
 //  Created by marcus on 16/6/6.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MSHomeViewController : UIViewController
+@interface MSWeatherViewController : UIViewController
 
 @end
