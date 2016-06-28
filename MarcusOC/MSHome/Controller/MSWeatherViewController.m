@@ -8,8 +8,10 @@
 
 #import "MSWeatherViewController.h"
 #import "MSRequstManager.h"
+#import "MSAPIWeatherManager.h"
 
-@interface MSWeatherViewController ()
+@interface MSWeatherViewController ()<MSAPIManagerParamSourceDelegate,MSAPIManagerApiCallBackDelegate>
+
 @property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end
@@ -28,8 +30,43 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self loadData1];
+//    [self loadData1];
 }
+
+- (IBAction)click:(id)sender {
+    for (int i = 0; i<100; i++) {
+        [MSProgressManager showLoading];
+        MSAPIWeatherManager *apiWeatherManager = [[MSAPIWeatherManager alloc]init];
+        apiWeatherManager.delegate = self;
+        apiWeatherManager.paramSource = self;
+        [apiWeatherManager loadData];
+    }
+}
+
+#pragma mark - MSAPIManagerParamSourceDelegate
+- (NSDictionary *)paramsForApi:(MSAPIBaseManager *)manager {
+    NSMutableDictionary * params = [NSMutableDictionary dictionary];
+    if ([manager isKindOfClass:[MSAPIWeatherManager class]]) {
+        [params setObject:@"上海" forKey:@"cityname"];
+        [params setObject:@"bad2cad16601f6a06ac442c335467961" forKey:@"key"];
+    }
+    return params;
+}
+
+#pragma mark - MSAPIManagerApiCallBackDelegate
+- (void)managerCallAPIDidSuccess:(MSAPIBaseManager *)manager {
+    NSLog(@"数据请求成功 %@",manager);
+    if (manager.errorType == MSAPIManagerErrorTypeSuccess) {
+        self.label.text = [NSString stringWithFormat:@"%@+++%@",self.label.text,manager.responseObject];
+    }
+}
+
+
+- (void)managerCallAPIDidFailed:(MSAPIBaseManager *)manager {
+    
+}
+
+
 
 #pragma mark private
 - (void)loadData1 {

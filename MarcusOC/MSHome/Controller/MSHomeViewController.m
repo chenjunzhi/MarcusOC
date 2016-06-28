@@ -7,16 +7,25 @@
 //
 
 #import "MSHomeViewController.h"
+#import "MSAPIWeatherManager.h"
 #import "MSWeatherViewController.h"
 
-@interface MSHomeViewController ()
+@interface MSHomeViewController () <MSAPIManagerParamSourceDelegate,MSAPIManagerApiCallBackDelegate>
+
+@property (nonatomic, strong) MSAPIWeatherManager *apiWeatherManager;
+@property (nonatomic, strong) NSString *callData;
 
 @end
 
 @implementation MSHomeViewController
 
+
+#pragma mark - view lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.apiWeatherManager = [[MSAPIWeatherManager alloc]init];
+    self.apiWeatherManager.delegate = self;
+    self.apiWeatherManager.paramSource = self;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -37,7 +46,30 @@
 
 }
 
+#pragma mark - MSAPIManagerParamSourceDelegate
+- (NSDictionary *)paramsForApi:(MSAPIBaseManager *)manager {
+    NSMutableDictionary * params = [NSMutableDictionary dictionary];
+    if (manager == self.apiWeatherManager) {
+        [params setObject:@"上海" forKey:@"cityname"];
+        [params setObject:@"bad2cad16601f6a06ac442c335467961" forKey:@"key"];
+    }
+    return params;
+}
+
+#pragma mark - MSAPIManagerApiCallBackDelegate
+- (void)managerCallAPIDidSuccess:(MSAPIBaseManager *)manager {
+    if (manager.errorType == MSAPIManagerErrorTypeSuccess) {
+        self.callData = [NSString stringWithFormat:@"%@+++%@",self.callData,manager.responseObject];
+    }
+}
+
+
+- (void)managerCallAPIDidFailed:(MSAPIBaseManager *)manager {
+    
+}
+
 - (IBAction)weatherClick:(UIButton *)sender {
+//    [self.apiWeatherManager loadData];
     MSWeatherViewController * weather = [[MSWeatherViewController alloc] init];
     [self.navigationController pushViewController:weather animated:YES];
 }

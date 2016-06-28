@@ -14,6 +14,7 @@
 #import "MSImages.h"
 #import "MSFoundation.h"
 #import "MSUIKit.h"
+#import "MSEnums.h"
 
 #import "MSProgressManager.h"
 

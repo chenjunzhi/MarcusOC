@@ -26,11 +26,24 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxq-G3-Ztf">
+                    <rect key="frame" x="252" y="324" width="97" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="97" id="VjX-4x-Jjg"/>
+                        <constraint firstAttribute="height" constant="30" id="jAI-gh-426"/>
+                    </constraints>
+                    <state key="normal" title="开始请求数据"/>
+                    <connections>
+                        <action selector="click:" destination="-1" eventType="touchUpInside" id="SQQ-ce-qyj"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="jXi-Vo-8uN" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="D5j-Ae-4vx"/>
                 <constraint firstItem="jXi-Vo-8uN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Fs5-6i-rFK"/>
+                <constraint firstItem="vxq-G3-Ztf" firstAttribute="centerX" secondItem="jXi-Vo-8uN" secondAttribute="centerX" id="i5r-NO-OR0"/>
+                <constraint firstItem="vxq-G3-Ztf" firstAttribute="top" secondItem="jXi-Vo-8uN" secondAttribute="bottom" constant="14" id="z8H-6x-XHJ"/>
             </constraints>
         </view>
     </objects>
