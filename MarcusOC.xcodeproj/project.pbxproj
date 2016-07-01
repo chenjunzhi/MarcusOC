@@ -25,6 +25,14 @@
 		2C5585E81CFABCE8001913AA /* UIButton+MSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5585E71CFABCE8001913AA /* UIButton+MSCategory.m */; };
 		2C746BD21D20F29500EFD86B /* MSNetWorkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C746BD11D20F29500EFD86B /* MSNetWorkingManager.m */; };
 		2C746BD51D20F2B300EFD86B /* MSAPIBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C746BD41D20F2B300EFD86B /* MSAPIBaseManager.m */; };
+		2C8468DA1D24EC6C00D7FA49 /* icon_navibar_back_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C8468D81D24EC6C00D7FA49 /* icon_navibar_back_red@2x.png */; };
+		2C8468DB1D24EC6C00D7FA49 /* icon_navibar_back_red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C8468D91D24EC6C00D7FA49 /* icon_navibar_back_red@3x.png */; };
+		2C8468DE1D24FC8900D7FA49 /* UIDevice+MSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8468DD1D24FC8900D7FA49 /* UIDevice+MSCategory.m */; };
+		2C8468E61D24FFC200D7FA49 /* MSCustom说明 in Resources */ = {isa = PBXBuildFile; fileRef = 2C8468E51D24FFC200D7FA49 /* MSCustom说明 */; };
+		2C8468EF1D25006E00D7FA49 /* MSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8468EE1D25006E00D7FA49 /* MSBaseViewController.m */; };
+		2C8468F21D250A7600D7FA49 /* NSObject+MSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8468F11D250A7600D7FA49 /* NSObject+MSCategory.m */; };
+		2C8468F51D251A7700D7FA49 /* icon_navibar_back_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C8468F31D251A7700D7FA49 /* icon_navibar_back_white@2x.png */; };
+		2C8468F61D251A7700D7FA49 /* icon_navibar_back_white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C8468F41D251A7700D7FA49 /* icon_navibar_back_white@3x.png */; };
 		2CE477401CE5A04100BAB436 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CE4773F1CE5A04100BAB436 /* Localizable.strings */; };
 		2CE477501CE5A3B000BAB436 /* icon_tabbar_discovery_newMessage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CE477421CE5A3B000BAB436 /* icon_tabbar_discovery_newMessage@2x.png */; };
 		2CE477511CE5A3B000BAB436 /* icon_tabbar_discovery_newMessage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CE477431CE5A3B000BAB436 /* icon_tabbar_discovery_newMessage@3x.png */; };
@@ -46,8 +54,6 @@
 		2CE4776C1CE5A63200BAB436 /* NSString+MSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477671CE5A63200BAB436 /* NSString+MSCategory.m */; };
 		2CE4776E1CE5A66D00BAB436 /* 项目说明 in Resources */ = {isa = PBXBuildFile; fileRef = 2CE4776D1CE5A66D00BAB436 /* 项目说明 */; };
 		2CE4777E1CE5ABE200BAB436 /* MSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE4777B1CE5ABE200BAB436 /* MSRootViewController.m */; };
-		2CE4778B1CE5ACD200BAB436 /* MSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477891CE5ACD200BAB436 /* MSViewController.m */; };
-		2CE4778C1CE5ACD200BAB436 /* MSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CE4778A1CE5ACD200BAB436 /* MSViewController.xib */; };
 		2CE477951CE5ADA200BAB436 /* MSDiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477931CE5ADA200BAB436 /* MSDiscoveryViewController.m */; };
 		2CE477961CE5ADA200BAB436 /* MSDiscoveryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CE477941CE5ADA200BAB436 /* MSDiscoveryViewController.xib */; };
 		2CE4779A1CE5ADD500BAB436 /* MSMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477981CE5ADD500BAB436 /* MSMyViewController.m */; };
@@ -113,6 +119,17 @@
 		2C746BD11D20F29500EFD86B /* MSNetWorkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNetWorkingManager.m; sourceTree = "<group>"; };
 		2C746BD31D20F2B300EFD86B /* MSAPIBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPIBaseManager.h; sourceTree = "<group>"; };
 		2C746BD41D20F2B300EFD86B /* MSAPIBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSAPIBaseManager.m; sourceTree = "<group>"; };
+		2C8468D81D24EC6C00D7FA49 /* icon_navibar_back_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_navibar_back_red@2x.png"; sourceTree = "<group>"; };
+		2C8468D91D24EC6C00D7FA49 /* icon_navibar_back_red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_navibar_back_red@3x.png"; sourceTree = "<group>"; };
+		2C8468DC1D24FC8900D7FA49 /* UIDevice+MSCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+MSCategory.h"; sourceTree = "<group>"; };
+		2C8468DD1D24FC8900D7FA49 /* UIDevice+MSCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+MSCategory.m"; sourceTree = "<group>"; };
+		2C8468E51D24FFC200D7FA49 /* MSCustom说明 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "MSCustom说明"; sourceTree = "<group>"; };
+		2C8468ED1D25006E00D7FA49 /* MSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseViewController.h; sourceTree = "<group>"; };
+		2C8468EE1D25006E00D7FA49 /* MSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseViewController.m; sourceTree = "<group>"; };
+		2C8468F01D250A7600D7FA49 /* NSObject+MSCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MSCategory.h"; sourceTree = "<group>"; };
+		2C8468F11D250A7600D7FA49 /* NSObject+MSCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MSCategory.m"; sourceTree = "<group>"; };
+		2C8468F31D251A7700D7FA49 /* icon_navibar_back_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_navibar_back_white@2x.png"; sourceTree = "<group>"; };
+		2C8468F41D251A7700D7FA49 /* icon_navibar_back_white@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_navibar_back_white@3x.png"; sourceTree = "<group>"; };
 		2C9EAB5B1D2223C50019F017 /* MSEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSEnums.h; sourceTree = "<group>"; };
 		2CE4773F1CE5A04100BAB436 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		2CE477421CE5A3B000BAB436 /* icon_tabbar_discovery_newMessage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tabbar_discovery_newMessage@2x.png"; sourceTree = "<group>"; };
@@ -141,9 +158,6 @@
 		2CE4776D1CE5A66D00BAB436 /* 项目说明 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "项目说明"; sourceTree = "<group>"; };
 		2CE4777A1CE5ABE200BAB436 /* MSRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSRootViewController.h; sourceTree = "<group>"; };
 		2CE4777B1CE5ABE200BAB436 /* MSRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSRootViewController.m; sourceTree = "<group>"; };
-		2CE477881CE5ACD200BAB436 /* MSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSViewController.h; sourceTree = "<group>"; };
-		2CE477891CE5ACD200BAB436 /* MSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSViewController.m; sourceTree = "<group>"; };
-		2CE4778A1CE5ACD200BAB436 /* MSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSViewController.xib; sourceTree = "<group>"; };
 		2CE477921CE5ADA200BAB436 /* MSDiscoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSDiscoveryViewController.h; path = ../MSDiscoveryViewController.h; sourceTree = "<group>"; };
 		2CE477931CE5ADA200BAB436 /* MSDiscoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSDiscoveryViewController.m; path = ../MSDiscoveryViewController.m; sourceTree = "<group>"; };
 		2CE477941CE5ADA200BAB436 /* MSDiscoveryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MSDiscoveryViewController.xib; path = ../MSDiscoveryViewController.xib; sourceTree = "<group>"; };
@@ -341,6 +355,15 @@
 			path = MSNetWorkingManager;
 			sourceTree = "<group>";
 		};
+		2C8468E71D25003C00D7FA49 /* MSBaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2C8468ED1D25006E00D7FA49 /* MSBaseViewController.h */,
+				2C8468EE1D25006E00D7FA49 /* MSBaseViewController.m */,
+			);
+			path = MSBaseViewController;
+			sourceTree = "<group>";
+		};
 		2CE477381CE59B2E00BAB436 /* MSDiscovery */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +425,10 @@
 		2CE477411CE5A3B000BAB436 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				2C8468F31D251A7700D7FA49 /* icon_navibar_back_white@2x.png */,
+				2C8468F41D251A7700D7FA49 /* icon_navibar_back_white@3x.png */,
+				2C8468D81D24EC6C00D7FA49 /* icon_navibar_back_red@2x.png */,
+				2C8468D91D24EC6C00D7FA49 /* icon_navibar_back_red@3x.png */,
 				2CE477421CE5A3B000BAB436 /* icon_tabbar_discovery_newMessage@2x.png */,
 				2CE477431CE5A3B000BAB436 /* icon_tabbar_discovery_newMessage@3x.png */,
 				2CE477441CE5A3B000BAB436 /* icon_tabbar_discovery_normal@2x.png */,
@@ -432,6 +459,8 @@
 				2CE477651CE5A63200BAB436 /* NSSet+MSCategory.m */,
 				2CE477661CE5A63200BAB436 /* NSString+MSCategory.h */,
 				2CE477671CE5A63200BAB436 /* NSString+MSCategory.m */,
+				2C8468F01D250A7600D7FA49 /* NSObject+MSCategory.h */,
+				2C8468F11D250A7600D7FA49 /* NSObject+MSCategory.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -444,6 +473,8 @@
 				2C5585E41CFAB7AB001913AA /* UILabel+MSCategory.m */,
 				2C5585E61CFABCE8001913AA /* UIButton+MSCategory.h */,
 				2C5585E71CFABCE8001913AA /* UIButton+MSCategory.m */,
+				2C8468DC1D24FC8900D7FA49 /* UIDevice+MSCategory.h */,
+				2C8468DD1D24FC8900D7FA49 /* UIDevice+MSCategory.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -451,9 +482,8 @@
 		2CE4776F1CE5A89100BAB436 /* MSCustom */ = {
 			isa = PBXGroup;
 			children = (
-				2CE477881CE5ACD200BAB436 /* MSViewController.h */,
-				2CE477891CE5ACD200BAB436 /* MSViewController.m */,
-				2CE4778A1CE5ACD200BAB436 /* MSViewController.xib */,
+				2C8468E51D24FFC200D7FA49 /* MSCustom说明 */,
+				2C8468E71D25003C00D7FA49 /* MSBaseViewController */,
 			);
 			path = MSCustom;
 			sourceTree = "<group>";
@@ -689,6 +719,8 @@
 				2CE477521CE5A3B000BAB436 /* icon_tabbar_discovery_normal@2x.png in Resources */,
 				2C097E221CEAC4DE00324DF0 /* loading-hu.gif in Resources */,
 				2CE477501CE5A3B000BAB436 /* icon_tabbar_discovery_newMessage@2x.png in Resources */,
+				2C8468DA1D24EC6C00D7FA49 /* icon_navibar_back_red@2x.png in Resources */,
+				2C8468F51D251A7700D7FA49 /* icon_navibar_back_white@2x.png in Resources */,
 				2CE477581CE5A3B000BAB436 /* icon_tabbar_home_selected@2x.png in Resources */,
 				2C199C9D1CE96E4800303BBC /* MSComponent说明 in Resources */,
 				2CE4776E1CE5A66D00BAB436 /* 项目说明 in Resources */,
@@ -696,15 +728,17 @@
 				2CE477531CE5A3B000BAB436 /* icon_tabbar_discovery_normal@3x.png in Resources */,
 				2CE477401CE5A04100BAB436 /* Localizable.strings in Resources */,
 				2CE477551CE5A3B000BAB436 /* icon_tabbar_discovery_selected@3x.png in Resources */,
+				2C8468F61D251A7700D7FA49 /* icon_navibar_back_white@3x.png in Resources */,
+				2C8468DB1D24EC6C00D7FA49 /* icon_navibar_back_red@3x.png in Resources */,
 				2CE4775C1CE5A3B000BAB436 /* icon_tabbar_my_selected@2x.png in Resources */,
 				2C3726161D054EAA00255A9B /* MSWeatherViewController.xib in Resources */,
 				2C3726111D0543FF00255A9B /* MSHomeViewController.xib in Resources */,
 				2CE477961CE5ADA200BAB436 /* MSDiscoveryViewController.xib in Resources */,
 				2CE4775B1CE5A3B000BAB436 /* icon_tabbar_my_normal@3x.png in Resources */,
 				2CE477561CE5A3B000BAB436 /* icon_tabbar_home_normal@2x.png in Resources */,
-				2CE4778C1CE5ACD200BAB436 /* MSViewController.xib in Resources */,
 				2C4EC2041CE5812D00D6AF6B /* Assets.xcassets in Resources */,
 				2CE477541CE5A3B000BAB436 /* icon_tabbar_discovery_selected@2x.png in Resources */,
+				2C8468E61D24FFC200D7FA49 /* MSCustom说明 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -778,12 +812,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C3726101D0543FF00255A9B /* MSHomeViewController.m in Sources */,
-				2CE4778B1CE5ACD200BAB436 /* MSViewController.m in Sources */,
 				2CE4779A1CE5ADD500BAB436 /* MSMyViewController.m in Sources */,
+				2C8468DE1D24FC8900D7FA49 /* UIDevice+MSCategory.m in Sources */,
 				2C3726151D054EAA00255A9B /* MSWeatherViewController.m in Sources */,
 				2C5585E51CFAB7AB001913AA /* UILabel+MSCategory.m in Sources */,
 				2CE477951CE5ADA200BAB436 /* MSDiscoveryViewController.m in Sources */,
 				2C199CBA1CE9C20E00303BBC /* MSProgressManager.m in Sources */,
+				2C8468F21D250A7600D7FA49 /* NSObject+MSCategory.m in Sources */,
+				2C8468EF1D25006E00D7FA49 /* MSBaseViewController.m in Sources */,
 				2CE477691CE5A63200BAB436 /* NSArray+MSCategory.m in Sources */,
 				2C5585E81CFABCE8001913AA /* UIButton+MSCategory.m in Sources */,
 				2CEBC8561D224FEE00DF2D4E /* MSAPIWeatherManager.m in Sources */,
@@ -931,10 +967,12 @@
 			baseConfigurationReference = 914A0B962682C00004AE0DDA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MarcusOC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MarcusOC.MarcusOC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -943,10 +981,12 @@
 			baseConfigurationReference = FA166E5AD57D4CCB7310BD8B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MarcusOC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MarcusOC.MarcusOC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

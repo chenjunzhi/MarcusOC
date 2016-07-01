@@ -13,5 +13,6 @@
 #import "NSArray+MSCategory.h"
 #import "NSDictionary+MSCategory.h"
 #import "NSSet+MSCategory.h"
+#import "NSObject+MSCategory.h"
 
 #endif /* MSFoundation_h */

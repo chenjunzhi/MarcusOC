@@ -6,8 +6,9 @@
 //  Copyright © 2016年 marcus. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "MSBaseViewController.h"
 
-@interface MSHomeViewController : UIViewController
+
+@interface MSHomeViewController : MSBaseViewController
 
 @end

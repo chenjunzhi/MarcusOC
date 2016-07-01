@@ -17,6 +17,10 @@
 #define color_tabBar_background_normal              RGB(249, 249, 249)      //HexColor(@"#f9f9f9")
 //tabBar 选中 背景颜色
 #define color_tabBar_background_selected            RGB(252, 86, 86)        //HexColor(@"#fc5656")
+//navBar Tint 颜色
+#define color_navBar_Tint                           RGB(232, 62, 65)
+//navBarItem Tint 颜色
+#define color_navBarItem_Tint                       RGB(250, 250, 250)        //HexColor(@"#fc5656")
 
 //纯白色 不透明
 #define color_white                                 RGB(255,255,255)        //HexColor(@"FFFFFF")

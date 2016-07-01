@@ -23,6 +23,11 @@
 #pragma mark - view lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+//    self.navigationBarHidden = YES;
+    self.tabBarHidden = NO;
+    
+    self.title = @"欢迎使用";
     self.apiWeatherManager = [[MSAPIWeatherManager alloc]init];
     self.apiWeatherManager.delegate = self;
     self.apiWeatherManager.paramSource = self;
@@ -71,6 +76,7 @@
 - (IBAction)weatherClick:(UIButton *)sender {
 //    [self.apiWeatherManager loadData];
     MSWeatherViewController * weather = [[MSWeatherViewController alloc] init];
+    weather.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:weather animated:YES];
 }
 

@@ -6,8 +6,8 @@
 //  Copyright © 2016年 marcus. All rights reserved.
 //
 
-#import "MSViewController.h"
+#import "MSBaseViewController.h"
 
-@interface MSMyViewController : MSViewController
+@interface MSMyViewController : MSBaseViewController
 
 @end

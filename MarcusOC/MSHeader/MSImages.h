@@ -29,4 +29,9 @@
 //tabbar 我的 选中图标
 #define img_icon_tabbar_my_selected                 IMG(@"icon_tabbar_my_selected")
 
+//nav 返回 红色 箭头
+#define img_icon_navibar_back_red                   IMG(@"icon_navibar_back_red")
+//nav 返回 白色 箭头
+#define img_icon_navibar_back_white                 IMG(@"icon_navibar_back_white")
+
 #endif /* MSImages_h */

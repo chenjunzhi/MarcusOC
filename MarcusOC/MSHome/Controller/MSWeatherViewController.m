@@ -13,6 +13,7 @@
 @interface MSWeatherViewController ()<MSAPIManagerParamSourceDelegate,MSAPIManagerApiCallBackDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *label;
+@property (atomic, assign) NSInteger count;
 
 @end
 
@@ -20,6 +21,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"天气情况";
+    
+//    self.navigationBarColor = color_tabBar_background_selected;
+    
+    [self createLeftBarItemWithImage];
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -34,14 +42,16 @@
 }
 
 - (IBAction)click:(id)sender {
+    self.count = 0;
     for (int i = 0; i<100; i++) {
-        [MSProgressManager showLoading];
+        [MSProgressManager show:@"" gifName:@"loading-hu" view:self.view];
         MSAPIWeatherManager *apiWeatherManager = [[MSAPIWeatherManager alloc]init];
         apiWeatherManager.delegate = self;
         apiWeatherManager.paramSource = self;
         [apiWeatherManager loadData];
     }
 }
+
 
 #pragma mark - MSAPIManagerParamSourceDelegate
 - (NSDictionary *)paramsForApi:(MSAPIBaseManager *)manager {
@@ -59,6 +69,10 @@
     if (manager.errorType == MSAPIManagerErrorTypeSuccess) {
         self.label.text = [NSString stringWithFormat:@"%@+++%@",self.label.text,manager.responseObject];
     }
+    self.count += 1;
+//    if (self.count == 100) {
+//        [MSProgressManager hideLoading];
+//    }
 }
 
 

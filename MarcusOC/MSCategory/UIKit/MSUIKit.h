@@ -11,5 +11,7 @@
 
 #import "UILabel+MSCategory.h"
 #import "UIButton+MSCategory.h"
+#import "UIDevice+MSCategory.h"
+
 
 #endif /* MSUIKit_h */

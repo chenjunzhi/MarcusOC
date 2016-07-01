@@ -91,4 +91,22 @@ typedef NS_ENUM(NSInteger, MSProgressMode) {
  */
 + (void)showProgress:(float)progress mode:(MSProgressMode)mode status:(NSString*)status;
 
+/**
+ *  显示加载动画
+ *
+ *  @param text    动画对应的提示文字
+ *  @param gifName 动画文件
+ *  @param view    显示的视图
+ */
++ (void)show:(NSString *)text gifName:(NSString *)gifName view:(UIView *)view;
+
+/**
+ *  显示信息
+ *
+ *  @param text 信息内容
+ *  @param image 图标
+ *  @param view 显示的视图
+ */
++ (void)show:(NSString *)text image:(UIImage *)image view:(UIView *)view;
+
 @end

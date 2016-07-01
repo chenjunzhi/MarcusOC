@@ -1,5 +1,5 @@
-1、MSRequstManager: 基于AFNetworking，网络请求封装(Block回调方式)
-2、MSNetWorkingManager: 基于AFNetworking, 网络请求封装 (delegate 方式，支持VC释放后，请求自动取消功能)
+1、MSAPIBaseManager、MSNetWorkingManager: 基于AFNetworking, 网络请求封装 (delegate 方式，支持VC释放后，请求自动取消功能)
    使用者只需要继承MSAPIBaseManager类，给url 和 requestType，在需要请求数据时 MSAPIManagerParamSourceDelegate 和 MSAPIManagerApiCallBackDelegate 代理即可
    优势：同一个接口统一处理，并且MSNetWorkingManager已经自动实现取消网络请求功能，使用者只需要关注业务逻辑即可。
-3、MSRequstManager: 基于SVProgressHUD，提示框封装
+2、MSRequstManager: 基于AFNetworking，网络请求封装(Block回调方式)
+3、MSProgressManager: 基于SVProgressHUD，提示框封装
