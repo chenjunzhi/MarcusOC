@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MSWeatherViewController">
             <connections>
-                <outlet property="label" destination="jXi-Vo-8uN" id="qHa-6c-sQ2"/>
+                <outlet property="textView" destination="xu6-kq-eF2" id="lqH-KM-KON"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,18 +16,8 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXi-Vo-8uN">
-                    <rect key="frame" x="279" y="289" width="42" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="4fM-QI-kRh"/>
-                        <constraint firstAttribute="width" constant="42" id="nuE-GZ-snv"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxq-G3-Ztf">
-                    <rect key="frame" x="252" y="324" width="97" height="30"/>
+                    <rect key="frame" x="252" y="285" width="97" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="97" id="VjX-4x-Jjg"/>
                         <constraint firstAttribute="height" constant="30" id="jAI-gh-426"/>
@@ -37,13 +27,22 @@
                         <action selector="click:" destination="-1" eventType="touchUpInside" id="SQQ-ce-qyj"/>
                     </connections>
                 </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xu6-kq-eF2">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="277"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="jXi-Vo-8uN" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="D5j-Ae-4vx"/>
-                <constraint firstItem="jXi-Vo-8uN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Fs5-6i-rFK"/>
-                <constraint firstItem="vxq-G3-Ztf" firstAttribute="centerX" secondItem="jXi-Vo-8uN" secondAttribute="centerX" id="i5r-NO-OR0"/>
-                <constraint firstItem="vxq-G3-Ztf" firstAttribute="top" secondItem="jXi-Vo-8uN" secondAttribute="bottom" constant="14" id="z8H-6x-XHJ"/>
+                <constraint firstItem="vxq-G3-Ztf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="37U-9Z-wWZ"/>
+                <constraint firstItem="xu6-kq-eF2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Juy-8h-vS7"/>
+                <constraint firstAttribute="trailing" secondItem="xu6-kq-eF2" secondAttribute="trailing" id="iga-A8-BgR"/>
+                <constraint firstItem="xu6-kq-eF2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="nsU-jT-KtO"/>
+                <constraint firstItem="vxq-G3-Ztf" firstAttribute="top" secondItem="xu6-kq-eF2" secondAttribute="bottom" constant="8" id="pOR-NY-t5R"/>
+                <constraint firstItem="vxq-G3-Ztf" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="xEJ-ZI-vZA"/>
             </constraints>
         </view>
     </objects>

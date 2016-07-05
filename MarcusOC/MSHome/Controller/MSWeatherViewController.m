@@ -12,8 +12,8 @@
 
 @interface MSWeatherViewController ()<MSAPIManagerParamSourceDelegate,MSAPIManagerApiCallBackDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *label;
 @property (atomic, assign) NSInteger count;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end
 
@@ -43,13 +43,11 @@
 
 - (IBAction)click:(id)sender {
     self.count = 0;
-    for (int i = 0; i<100; i++) {
-        [MSProgressManager show:@"" gifName:@"loading-hu" view:self.view];
-        MSAPIWeatherManager *apiWeatherManager = [[MSAPIWeatherManager alloc]init];
-        apiWeatherManager.delegate = self;
-        apiWeatherManager.paramSource = self;
-        [apiWeatherManager loadData];
-    }
+    [MSProgressManager show:@"" gifName:@"loading-hu" view:self.view];
+    MSAPIWeatherManager *apiWeatherManager = [[MSAPIWeatherManager alloc]init];
+    apiWeatherManager.delegate = self;
+    apiWeatherManager.paramSource = self;
+    [apiWeatherManager loadData];
 }
 
 
@@ -65,14 +63,14 @@
 
 #pragma mark - MSAPIManagerApiCallBackDelegate
 - (void)managerCallAPIDidSuccess:(MSAPIBaseManager *)manager {
-    NSLog(@"数据请求成功 %@",manager);
+    MSLog(@"数据请求成功 manager：%@",manager);
     if (manager.errorType == MSAPIManagerErrorTypeSuccess) {
-        self.label.text = [NSString stringWithFormat:@"%@+++%@",self.label.text,manager.responseObject];
+        NSDictionary *dic = manager.responseObject;
+        if ([[dic valueForKey:@"error_code"] integerValue] == 0) {
+            
+        }
     }
-    self.count += 1;
-//    if (self.count == 100) {
-//        [MSProgressManager hideLoading];
-//    }
+    [MSProgressManager hideLoading];
 }
 
 
@@ -84,42 +82,42 @@
 
 #pragma mark private
 - (void)loadData1 {
-    NSLog(@"0000%@",self.navigationController.viewControllers);
+    MSLog(@"0000%@",self.navigationController.viewControllers);
     __weak typeof(self) tempSelf = self;
     [[MSRequstManager sharedManager] asynGET:[NSString stringWithFormat:@"%@?cityname=%@&key=%@",WeatherHeaderURL,@"上海",@"bad2cad16601f6a06ac442c335467961"] withCompeletBlock:^(id  _Nullable responseObject, MSRequstErrorCode code, NSError * _Nullable error) {
         if (responseObject) {
-            NSLog(@"1111%@",tempSelf.label);
+//            NSLog(@"1111%@",tempSelf.label);
         }
     }];
     
     [[MSRequstManager sharedManager] asynGET:[NSString stringWithFormat:@"%@?cityname=%@&key=%@",WeatherHeaderURL,@"合肥",@"bad2cad16601f6a06ac442c335467961"] withCompeletBlock:^(id  _Nullable responseObject, MSRequstErrorCode code, NSError * _Nullable error) {
         if (responseObject) {
              sleep(4);
-            NSLog(@"2222%@",tempSelf.label);
+//            NSLog(@"2222%@",tempSelf.label);
         }
     }];
     
     [[MSRequstManager sharedManager] asynGET:[NSString stringWithFormat:@"%@?cityname=%@&key=%@",WeatherHeaderURL,@"北京",@"bad2cad16601f6a06ac442c335467961"] withCompeletBlock:^(id  _Nullable responseObject, MSRequstErrorCode code, NSError * _Nullable error) {
         if (responseObject) {
-            NSLog(@"3333%@",tempSelf.label);
+//            NSLog(@"3333%@",tempSelf.label);
         }
     }];
     
     [[MSRequstManager sharedManager] asynGET:[NSString stringWithFormat:@"%@?cityname=%@&key=%@",WeatherHeaderURL,@"广州",@"bad2cad16601f6a06ac442c335467961"] withCompeletBlock:^(id  _Nullable responseObject, MSRequstErrorCode code, NSError * _Nullable error) {
         if (responseObject) {
-            NSLog(@"4444%@",tempSelf.label);
+//            NSLog(@"4444%@",tempSelf.label);
         }
     }];
     
     [[MSRequstManager sharedManager] asynGET:[NSString stringWithFormat:@"%@?q=%@&key=%@",NewsHeaderURL,@"北京",@"1580154996dd3f10b6fc397d0b118189"] withCompeletBlock:^(id  _Nullable responseObject, MSRequstErrorCode code, NSError * _Nullable error) {
         if (responseObject) {
-            NSLog(@"55555%@",tempSelf.label);
+//            NSLog(@"55555%@",tempSelf.label);
         }
     }];
     
     [[MSRequstManager sharedManager] asynGET:[NSString stringWithFormat:@"%@?q=%@&key=%@",NewsHeaderURL,@"上海",@"1580154996dd3f10b6fc397d0b118189"] withCompeletBlock:^(id  _Nullable responseObject, MSRequstErrorCode code, NSError * _Nullable error) {
         if (responseObject) {
-            NSLog(@"66666%@",tempSelf.label);
+//            NSLog(@"66666%@",tempSelf.label);
         }
     }];
 }
@@ -139,7 +137,6 @@
         [[MSRequstManager sharedManager] asynGET:[NSString stringWithFormat:@"%@?cityname=%@&key=%@",WeatherHeaderURL,@"上海",@"bad2cad16601f6a06ac442c335467961"] withCompeletBlock:^(id  _Nullable responseObject, MSRequstErrorCode code, NSError * _Nullable error) {
             if (responseObject) {
                 NSLog(@"1111%@",tempself.navigationController.viewControllers);
-                self.label.text = @"1111";
                 dispatch_group_leave(group);
             }
         }];
@@ -148,7 +145,6 @@
         [[MSRequstManager sharedManager] asynGET:[NSString stringWithFormat:@"%@?cityname=%@&key=%@",WeatherHeaderURL,@"合肥",@"bad2cad16601f6a06ac442c335467961"] withCompeletBlock:^(id  _Nullable responseObject, MSRequstErrorCode code, NSError * _Nullable error) {
             if (responseObject) {
                 NSLog(@"2222%@",tempself.navigationController.viewControllers);
-                self.label.text = @"2222";
                 dispatch_group_leave(group);
             }
         }];
@@ -157,7 +153,6 @@
         [[MSRequstManager sharedManager] asynGET:[NSString stringWithFormat:@"%@?cityname=%@&key=%@",WeatherHeaderURL,@"北京",@"bad2cad16601f6a06ac442c335467961"] withCompeletBlock:^(id  _Nullable responseObject, MSRequstErrorCode code, NSError * _Nullable error) {
             if (responseObject) {
                 NSLog(@"3333%@",tempself.navigationController.viewControllers);
-                self.label.text = @"3333";
                 dispatch_group_leave(group);
             }
         }];
@@ -166,7 +161,6 @@
         [[MSRequstManager sharedManager] asynGET:[NSString stringWithFormat:@"%@?cityname=%@&key=%@",WeatherHeaderURL,@"广州",@"bad2cad16601f6a06ac442c335467961"] withCompeletBlock:^(id  _Nullable responseObject, MSRequstErrorCode code, NSError * _Nullable error) {
             if (responseObject) {
                 NSLog(@"4444%@",tempself.navigationController.viewControllers);
-                self.label.text = @"4444";
                 dispatch_group_leave(group);
             }
         }];
@@ -175,7 +169,6 @@
         [[MSRequstManager sharedManager] asynGET:[NSString stringWithFormat:@"%@?q=%@&key=%@",NewsHeaderURL,@"北京",@"1580154996dd3f10b6fc397d0b118189"] withCompeletBlock:^(id  _Nullable responseObject, MSRequstErrorCode code, NSError * _Nullable error) {
             if (responseObject) {
                 NSLog(@"55555%@",tempself.navigationController.viewControllers);
-                self.label.text = @"5555";
                 dispatch_group_leave(group);
             }
         }];
@@ -184,7 +177,6 @@
         [[MSRequstManager sharedManager] asynGET:[NSString stringWithFormat:@"%@?q=%@&key=%@",NewsHeaderURL,@"上海",@"1580154996dd3f10b6fc397d0b118189"] withCompeletBlock:^(id  _Nullable responseObject, MSRequstErrorCode code, NSError * _Nullable error) {
             if (responseObject) {
                 NSLog(@"66666%@",tempself.navigationController.viewControllers);
-                self.label.text = @"6666";
                 dispatch_group_leave(group);
             }
         }];
