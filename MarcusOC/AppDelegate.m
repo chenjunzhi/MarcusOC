@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "MSHeader.h"
 #import "MSRootViewController.h"
+#import "IQKeyboardManager.h"
 
 @interface AppDelegate ()
 
@@ -76,8 +77,14 @@
 
 //初始化三方插件
 - (void)setupFrameworks {
-    //设置显示框风格
-//    [MSProgressManager setProgressStyle];
+    //自动处理键盘事件 控件初始化
+    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+    manager.enable = YES;
+    manager.shouldResignOnTouchOutside = YES;
+    manager.shouldToolbarUsesTextFieldTintColor = YES;
+    manager.enableAutoToolbar = YES;
+    
+    
 }
 
 @end

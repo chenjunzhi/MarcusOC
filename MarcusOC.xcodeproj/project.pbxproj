@@ -10,6 +10,8 @@
 		2C097E221CEAC4DE00324DF0 /* loading-hu.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2C097E211CEAC4DE00324DF0 /* loading-hu.gif */; };
 		2C199C9D1CE96E4800303BBC /* MSComponent说明 in Resources */ = {isa = PBXBuildFile; fileRef = 2C199C9C1CE96E4800303BBC /* MSComponent说明 */; };
 		2C199CBA1CE9C20E00303BBC /* MSProgressManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C199CB91CE9C20E00303BBC /* MSProgressManager.m */; };
+		2C2C77CF1D2B91E80029FD46 /* MSWeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2C77CE1D2B91E80029FD46 /* MSWeatherModel.m */; };
+		2C2C77D21D2BBC3F0029FD46 /* UINavigationController+MSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2C77D11D2BBC3F0029FD46 /* UINavigationController+MSCategory.m */; };
 		2C3726101D0543FF00255A9B /* MSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C37260E1D0543FF00255A9B /* MSHomeViewController.m */; };
 		2C3726111D0543FF00255A9B /* MSHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C37260F1D0543FF00255A9B /* MSHomeViewController.xib */; };
 		2C3726151D054EAA00255A9B /* MSWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3726131D054EAA00255A9B /* MSWeatherViewController.m */; };
@@ -84,6 +86,10 @@
 		2C199C9C1CE96E4800303BBC /* MSComponent说明 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "MSComponent说明"; sourceTree = "<group>"; };
 		2C199CB81CE9C20E00303BBC /* MSProgressManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSProgressManager.h; sourceTree = "<group>"; };
 		2C199CB91CE9C20E00303BBC /* MSProgressManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSProgressManager.m; sourceTree = "<group>"; };
+		2C2C77CD1D2B91E80029FD46 /* MSWeatherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSWeatherModel.h; sourceTree = "<group>"; };
+		2C2C77CE1D2B91E80029FD46 /* MSWeatherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSWeatherModel.m; sourceTree = "<group>"; };
+		2C2C77D01D2BBC3F0029FD46 /* UINavigationController+MSCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+MSCategory.h"; sourceTree = "<group>"; };
+		2C2C77D11D2BBC3F0029FD46 /* UINavigationController+MSCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+MSCategory.m"; sourceTree = "<group>"; };
 		2C37260D1D0543FF00255A9B /* MSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeViewController.h; sourceTree = "<group>"; };
 		2C37260E1D0543FF00255A9B /* MSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeViewController.m; sourceTree = "<group>"; };
 		2C37260F1D0543FF00255A9B /* MSHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSHomeViewController.xib; sourceTree = "<group>"; };
@@ -475,6 +481,8 @@
 				2C5585E71CFABCE8001913AA /* UIButton+MSCategory.m */,
 				2C8468DC1D24FC8900D7FA49 /* UIDevice+MSCategory.h */,
 				2C8468DD1D24FC8900D7FA49 /* UIDevice+MSCategory.m */,
+				2C2C77D01D2BBC3F0029FD46 /* UINavigationController+MSCategory.h */,
+				2C2C77D11D2BBC3F0029FD46 /* UINavigationController+MSCategory.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -527,6 +535,8 @@
 		2CE477801CE5ABFB00BAB436 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2C2C77CD1D2B91E80029FD46 /* MSWeatherModel.h */,
+				2C2C77CE1D2B91E80029FD46 /* MSWeatherModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -814,6 +824,7 @@
 				2C3726101D0543FF00255A9B /* MSHomeViewController.m in Sources */,
 				2CE4779A1CE5ADD500BAB436 /* MSMyViewController.m in Sources */,
 				2C8468DE1D24FC8900D7FA49 /* UIDevice+MSCategory.m in Sources */,
+				2C2C77D21D2BBC3F0029FD46 /* UINavigationController+MSCategory.m in Sources */,
 				2C3726151D054EAA00255A9B /* MSWeatherViewController.m in Sources */,
 				2C5585E51CFAB7AB001913AA /* UILabel+MSCategory.m in Sources */,
 				2CE477951CE5ADA200BAB436 /* MSDiscoveryViewController.m in Sources */,
@@ -829,6 +840,7 @@
 				2C4EC2431CE5833100D6AF6B /* MSRequstManager.m in Sources */,
 				2CE4776B1CE5A63200BAB436 /* NSSet+MSCategory.m in Sources */,
 				2CE4776A1CE5A63200BAB436 /* NSDictionary+MSCategory.m in Sources */,
+				2C2C77CF1D2B91E80029FD46 /* MSWeatherModel.m in Sources */,
 				2C4EC1F91CE5812D00D6AF6B /* main.m in Sources */,
 				2C746BD21D20F29500EFD86B /* MSNetWorkingManager.m in Sources */,
 				2CE4777E1CE5ABE200BAB436 /* MSRootViewController.m in Sources */,
