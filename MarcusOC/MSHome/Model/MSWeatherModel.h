@@ -19,5 +19,5 @@
 @property (nonatomic, strong) NSString *moon;
 @property (nonatomic, strong) NSString *dressingIndex;
 
-
 @end
+

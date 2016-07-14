@@ -25,8 +25,11 @@
 		2C4EC2431CE5833100D6AF6B /* MSRequstManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EC2391CE5833100D6AF6B /* MSRequstManager.m */; };
 		2C5585E51CFAB7AB001913AA /* UILabel+MSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5585E41CFAB7AB001913AA /* UILabel+MSCategory.m */; };
 		2C5585E81CFABCE8001913AA /* UIButton+MSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5585E71CFABCE8001913AA /* UIButton+MSCategory.m */; };
+		2C5B51DD1D3744F0002A0FD9 /* demo.js in Resources */ = {isa = PBXBuildFile; fileRef = 2C5B51DC1D3744F0002A0FD9 /* demo.js */; };
 		2C746BD21D20F29500EFD86B /* MSNetWorkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C746BD11D20F29500EFD86B /* MSNetWorkingManager.m */; };
 		2C746BD51D20F2B300EFD86B /* MSAPIBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C746BD41D20F2B300EFD86B /* MSAPIBaseManager.m */; };
+		2C779CD11D34C9480041775D /* MSTestModel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C779CCE1D34C9480041775D /* MSTestModel+CoreDataProperties.m */; };
+		2C779CD21D34C9480041775D /* MSTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C779CD01D34C9480041775D /* MSTestModel.m */; };
 		2C8468DA1D24EC6C00D7FA49 /* icon_navibar_back_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C8468D81D24EC6C00D7FA49 /* icon_navibar_back_red@2x.png */; };
 		2C8468DB1D24EC6C00D7FA49 /* icon_navibar_back_red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C8468D91D24EC6C00D7FA49 /* icon_navibar_back_red@3x.png */; };
 		2C8468DE1D24FC8900D7FA49 /* UIDevice+MSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8468DD1D24FC8900D7FA49 /* UIDevice+MSCategory.m */; };
@@ -35,6 +38,7 @@
 		2C8468F21D250A7600D7FA49 /* NSObject+MSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8468F11D250A7600D7FA49 /* NSObject+MSCategory.m */; };
 		2C8468F51D251A7700D7FA49 /* icon_navibar_back_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C8468F31D251A7700D7FA49 /* icon_navibar_back_white@2x.png */; };
 		2C8468F61D251A7700D7FA49 /* icon_navibar_back_white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C8468F41D251A7700D7FA49 /* icon_navibar_back_white@3x.png */; };
+		2CE1EAE71D338458006D36EC /* testModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1EAE51D338458006D36EC /* testModel.xcdatamodeld */; };
 		2CE477401CE5A04100BAB436 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CE4773F1CE5A04100BAB436 /* Localizable.strings */; };
 		2CE477501CE5A3B000BAB436 /* icon_tabbar_discovery_newMessage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CE477421CE5A3B000BAB436 /* icon_tabbar_discovery_newMessage@2x.png */; };
 		2CE477511CE5A3B000BAB436 /* icon_tabbar_discovery_newMessage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CE477431CE5A3B000BAB436 /* icon_tabbar_discovery_newMessage@3x.png */; };
@@ -102,7 +106,7 @@
 		2C4EC1FB1CE5812D00D6AF6B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2C4EC2031CE5812D00D6AF6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C4EC2061CE5812D00D6AF6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2C4EC2081CE5812D00D6AF6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C4EC2081CE5812D00D6AF6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		2C4EC20D1CE5812D00D6AF6B /* MarcusOCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarcusOCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C4EC2111CE5812D00D6AF6B /* MarcusOCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarcusOCTests.m; sourceTree = "<group>"; };
 		2C4EC2131CE5812D00D6AF6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -121,10 +125,15 @@
 		2C5585E71CFABCE8001913AA /* UIButton+MSCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+MSCategory.m"; sourceTree = "<group>"; };
 		2C5585E91CFABD31001913AA /* MSUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSUIKit.h; sourceTree = "<group>"; };
 		2C59258D1D05222C00925562 /* MSComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSComponent.h; sourceTree = "<group>"; };
+		2C5B51DC1D3744F0002A0FD9 /* demo.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = demo.js; sourceTree = "<group>"; };
 		2C746BD01D20F29500EFD86B /* MSNetWorkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNetWorkingManager.h; sourceTree = "<group>"; };
 		2C746BD11D20F29500EFD86B /* MSNetWorkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNetWorkingManager.m; sourceTree = "<group>"; };
 		2C746BD31D20F2B300EFD86B /* MSAPIBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPIBaseManager.h; sourceTree = "<group>"; };
 		2C746BD41D20F2B300EFD86B /* MSAPIBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSAPIBaseManager.m; sourceTree = "<group>"; };
+		2C779CCD1D34C9480041775D /* MSTestModel+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MSTestModel+CoreDataProperties.h"; path = "../../MSHome/Controller/MSTestModel+CoreDataProperties.h"; sourceTree = "<group>"; };
+		2C779CCE1D34C9480041775D /* MSTestModel+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MSTestModel+CoreDataProperties.m"; path = "../../MSHome/Controller/MSTestModel+CoreDataProperties.m"; sourceTree = "<group>"; };
+		2C779CCF1D34C9480041775D /* MSTestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSTestModel.h; path = ../../MSHome/Controller/MSTestModel.h; sourceTree = "<group>"; };
+		2C779CD01D34C9480041775D /* MSTestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSTestModel.m; path = ../../MSHome/Controller/MSTestModel.m; sourceTree = "<group>"; };
 		2C8468D81D24EC6C00D7FA49 /* icon_navibar_back_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_navibar_back_red@2x.png"; sourceTree = "<group>"; };
 		2C8468D91D24EC6C00D7FA49 /* icon_navibar_back_red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_navibar_back_red@3x.png"; sourceTree = "<group>"; };
 		2C8468DC1D24FC8900D7FA49 /* UIDevice+MSCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+MSCategory.h"; sourceTree = "<group>"; };
@@ -137,6 +146,7 @@
 		2C8468F31D251A7700D7FA49 /* icon_navibar_back_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_navibar_back_white@2x.png"; sourceTree = "<group>"; };
 		2C8468F41D251A7700D7FA49 /* icon_navibar_back_white@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_navibar_back_white@3x.png"; sourceTree = "<group>"; };
 		2C9EAB5B1D2223C50019F017 /* MSEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSEnums.h; sourceTree = "<group>"; };
+		2CE1EAE61D338458006D36EC /* testModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = testModel.xcdatamodel; sourceTree = "<group>"; };
 		2CE4773F1CE5A04100BAB436 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		2CE477421CE5A3B000BAB436 /* icon_tabbar_discovery_newMessage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tabbar_discovery_newMessage@2x.png"; sourceTree = "<group>"; };
 		2CE477431CE5A3B000BAB436 /* icon_tabbar_discovery_newMessage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_tabbar_discovery_newMessage@3x.png"; sourceTree = "<group>"; };
@@ -303,7 +313,7 @@
 				2C4EC1FA1CE5812D00D6AF6B /* AppDelegate.h */,
 				2C4EC1FB1CE5812D00D6AF6B /* AppDelegate.m */,
 				2C4EC2051CE5812D00D6AF6B /* LaunchScreen.storyboard */,
-				2C4EC2081CE5812D00D6AF6B /* Info.plist */,
+				2C5B51DC1D3744F0002A0FD9 /* demo.js */,
 			);
 			name = MSApp;
 			sourceTree = "<group>";
@@ -341,6 +351,7 @@
 		2C4EC23A1CE5833100D6AF6B /* MSHeader */ = {
 			isa = PBXGroup;
 			children = (
+				2C4EC2081CE5812D00D6AF6B /* Info.plist */,
 				2C4EC23D1CE5833100D6AF6B /* MSHeader.h */,
 				2C4EC23B1CE5833100D6AF6B /* MSColors.h */,
 				2C4EC23C1CE5833100D6AF6B /* MSDefines.h */,
@@ -578,6 +589,11 @@
 				2CE477971CE5ADD500BAB436 /* MSMyViewController.h */,
 				2CE477981CE5ADD500BAB436 /* MSMyViewController.m */,
 				2CE477991CE5ADD500BAB436 /* MSMyViewController.xib */,
+				2CE1EAE51D338458006D36EC /* testModel.xcdatamodeld */,
+				2C779CCD1D34C9480041775D /* MSTestModel+CoreDataProperties.h */,
+				2C779CCE1D34C9480041775D /* MSTestModel+CoreDataProperties.m */,
+				2C779CCF1D34C9480041775D /* MSTestModel.h */,
+				2C779CD01D34C9480041775D /* MSTestModel.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -735,6 +751,7 @@
 				2C199C9D1CE96E4800303BBC /* MSComponent说明 in Resources */,
 				2CE4776E1CE5A66D00BAB436 /* 项目说明 in Resources */,
 				2CE4775A1CE5A3B000BAB436 /* icon_tabbar_my_normal@2x.png in Resources */,
+				2C5B51DD1D3744F0002A0FD9 /* demo.js in Resources */,
 				2CE477531CE5A3B000BAB436 /* icon_tabbar_discovery_normal@3x.png in Resources */,
 				2CE477401CE5A04100BAB436 /* Localizable.strings in Resources */,
 				2CE477551CE5A3B000BAB436 /* icon_tabbar_discovery_selected@3x.png in Resources */,
@@ -827,6 +844,7 @@
 				2C2C77D21D2BBC3F0029FD46 /* UINavigationController+MSCategory.m in Sources */,
 				2C3726151D054EAA00255A9B /* MSWeatherViewController.m in Sources */,
 				2C5585E51CFAB7AB001913AA /* UILabel+MSCategory.m in Sources */,
+				2C779CD11D34C9480041775D /* MSTestModel+CoreDataProperties.m in Sources */,
 				2CE477951CE5ADA200BAB436 /* MSDiscoveryViewController.m in Sources */,
 				2C199CBA1CE9C20E00303BBC /* MSProgressManager.m in Sources */,
 				2C8468F21D250A7600D7FA49 /* NSObject+MSCategory.m in Sources */,
@@ -836,10 +854,12 @@
 				2CEBC8561D224FEE00DF2D4E /* MSAPIWeatherManager.m in Sources */,
 				2C746BD51D20F2B300EFD86B /* MSAPIBaseManager.m in Sources */,
 				2CE4776C1CE5A63200BAB436 /* NSString+MSCategory.m in Sources */,
+				2CE1EAE71D338458006D36EC /* testModel.xcdatamodeld in Sources */,
 				2C4EC1FC1CE5812D00D6AF6B /* AppDelegate.m in Sources */,
 				2C4EC2431CE5833100D6AF6B /* MSRequstManager.m in Sources */,
 				2CE4776B1CE5A63200BAB436 /* NSSet+MSCategory.m in Sources */,
 				2CE4776A1CE5A63200BAB436 /* NSDictionary+MSCategory.m in Sources */,
+				2C779CD21D34C9480041775D /* MSTestModel.m in Sources */,
 				2C2C77CF1D2B91E80029FD46 /* MSWeatherModel.m in Sources */,
 				2C4EC1F91CE5812D00D6AF6B /* main.m in Sources */,
 				2C746BD21D20F29500EFD86B /* MSNetWorkingManager.m in Sources */,
@@ -1088,6 +1108,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2CE1EAE51D338458006D36EC /* testModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2CE1EAE61D338458006D36EC /* testModel.xcdatamodel */,
+			);
+			currentVersion = 2CE1EAE61D338458006D36EC /* testModel.xcdatamodel */;
+			name = testModel.xcdatamodeld;
+			path = ../../MSHome/Controller/testModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2C4EC1EC1CE5812C00D6AF6B /* Project object */;
 }

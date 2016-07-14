@@ -11,6 +11,7 @@
 #import "MSAPIWeatherManager.h"
 #import "MSWeatherModel.h"
 
+
 @interface MSWeatherViewController ()<MSAPIManagerParamSourceDelegate,MSAPIManagerApiCallBackDelegate>
 
 @property (nonatomic, strong) MSAPIWeatherManager *apiWeatherManager;
@@ -31,6 +32,7 @@
     [self createLeftBarItemWithImage];
     
     [self loadData];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -83,6 +85,8 @@
     self.updateLabel.text = [NSString stringWithFormat:@"%@",self.weatherModel.updteTime];
     self.dreeingIndexLabel.text = self.weatherModel.dressingIndex;
 }
+
+
 
 #pragma mark - getters and setter
 - (MSAPIWeatherManager*)apiWeatherManager {

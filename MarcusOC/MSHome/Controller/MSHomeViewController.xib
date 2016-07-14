@@ -28,6 +28,7 @@
                 <constraint firstItem="yMh-dn-BUv" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="M5r-Rp-pR6"/>
                 <constraint firstItem="yMh-dn-BUv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jm3-Lw-pDm"/>
             </constraints>
+            <point key="canvasLocation" x="418" y="337"/>
         </view>
     </objects>
 </document>
