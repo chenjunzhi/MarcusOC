@@ -25,7 +25,6 @@
 		2C4EC2431CE5833100D6AF6B /* MSRequstManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EC2391CE5833100D6AF6B /* MSRequstManager.m */; };
 		2C5585E51CFAB7AB001913AA /* UILabel+MSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5585E41CFAB7AB001913AA /* UILabel+MSCategory.m */; };
 		2C5585E81CFABCE8001913AA /* UIButton+MSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5585E71CFABCE8001913AA /* UIButton+MSCategory.m */; };
-		2C5B51DD1D3744F0002A0FD9 /* demo.js in Resources */ = {isa = PBXBuildFile; fileRef = 2C5B51DC1D3744F0002A0FD9 /* demo.js */; };
 		2C746BD21D20F29500EFD86B /* MSNetWorkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C746BD11D20F29500EFD86B /* MSNetWorkingManager.m */; };
 		2C746BD51D20F2B300EFD86B /* MSAPIBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C746BD41D20F2B300EFD86B /* MSAPIBaseManager.m */; };
 		2C779CD11D34C9480041775D /* MSTestModel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C779CCE1D34C9480041775D /* MSTestModel+CoreDataProperties.m */; };
@@ -125,7 +124,6 @@
 		2C5585E71CFABCE8001913AA /* UIButton+MSCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+MSCategory.m"; sourceTree = "<group>"; };
 		2C5585E91CFABD31001913AA /* MSUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSUIKit.h; sourceTree = "<group>"; };
 		2C59258D1D05222C00925562 /* MSComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSComponent.h; sourceTree = "<group>"; };
-		2C5B51DC1D3744F0002A0FD9 /* demo.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = demo.js; sourceTree = "<group>"; };
 		2C746BD01D20F29500EFD86B /* MSNetWorkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNetWorkingManager.h; sourceTree = "<group>"; };
 		2C746BD11D20F29500EFD86B /* MSNetWorkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNetWorkingManager.m; sourceTree = "<group>"; };
 		2C746BD31D20F2B300EFD86B /* MSAPIBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPIBaseManager.h; sourceTree = "<group>"; };
@@ -313,7 +311,6 @@
 				2C4EC1FA1CE5812D00D6AF6B /* AppDelegate.h */,
 				2C4EC1FB1CE5812D00D6AF6B /* AppDelegate.m */,
 				2C4EC2051CE5812D00D6AF6B /* LaunchScreen.storyboard */,
-				2C5B51DC1D3744F0002A0FD9 /* demo.js */,
 			);
 			name = MSApp;
 			sourceTree = "<group>";
@@ -751,7 +748,6 @@
 				2C199C9D1CE96E4800303BBC /* MSComponent说明 in Resources */,
 				2CE4776E1CE5A66D00BAB436 /* 项目说明 in Resources */,
 				2CE4775A1CE5A3B000BAB436 /* icon_tabbar_my_normal@2x.png in Resources */,
-				2C5B51DD1D3744F0002A0FD9 /* demo.js in Resources */,
 				2CE477531CE5A3B000BAB436 /* icon_tabbar_discovery_normal@3x.png in Resources */,
 				2CE477401CE5A04100BAB436 /* Localizable.strings in Resources */,
 				2CE477551CE5A3B000BAB436 /* icon_tabbar_discovery_selected@3x.png in Resources */,

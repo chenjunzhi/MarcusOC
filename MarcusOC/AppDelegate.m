@@ -10,7 +10,6 @@
 #import "MSHeader.h"
 #import "MSRootViewController.h"
 #import "IQKeyboardManager.h"
-#import "JPEngine.h"
 
 @interface AppDelegate ()
 
@@ -85,10 +84,6 @@
     manager.shouldToolbarUsesTextFieldTintColor = YES;
     manager.enableAutoToolbar = YES;
     
-    [JPEngine startEngine];
-    NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"demo" ofType:@"js"];
-    NSString *script = [NSString stringWithContentsOfFile:sourcePath encoding:NSUTF8StringEncoding error:nil];
-    [JPEngine evaluateScript:script];
 }
 
 @end
