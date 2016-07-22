@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "MSHeader.h"
 #import "MSRootViewController.h"
+#import <JSPatch/JSPatch.h>
 #import "IQKeyboardManager.h"
 
 @interface AppDelegate ()
@@ -77,6 +78,14 @@
 
 //初始化三方插件
 - (void)setupFrameworks {
+    //热修复工具 JSPatch
+    [JSPatch startWithAppKey:@"d6d8ca10f254ead5"];
+//#ifdef DEBUG
+//    [JSPatch setupDevelopment];
+//#endif
+    [JSPatch sync];
+//    [JSPatch testScriptInBundle];
+    
     //自动处理键盘事件 控件初始化
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
     manager.enable = YES;

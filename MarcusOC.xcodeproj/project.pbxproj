@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C0511B01D3789F500CCEB47 /* JSPatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0511AF1D3789F500CCEB47 /* JSPatch.framework */; };
+		2C0511B21D378AD600CCEB47 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0511B11D378AD600CCEB47 /* JavaScriptCore.framework */; };
+		2C0511B51D378B2400CCEB47 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0511B31D378AE700CCEB47 /* libz.tbd */; };
 		2C097E221CEAC4DE00324DF0 /* loading-hu.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2C097E211CEAC4DE00324DF0 /* loading-hu.gif */; };
 		2C199C9D1CE96E4800303BBC /* MSComponent说明 in Resources */ = {isa = PBXBuildFile; fileRef = 2C199C9C1CE96E4800303BBC /* MSComponent说明 */; };
 		2C199CBA1CE9C20E00303BBC /* MSProgressManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C199CB91CE9C20E00303BBC /* MSProgressManager.m */; };
@@ -85,6 +88,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C0511AF1D3789F500CCEB47 /* JSPatch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JSPatch.framework; sourceTree = "<group>"; };
+		2C0511B11D378AD600CCEB47 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		2C0511B31D378AE700CCEB47 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		2C097E211CEAC4DE00324DF0 /* loading-hu.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "loading-hu.gif"; sourceTree = "<group>"; };
 		2C199C9C1CE96E4800303BBC /* MSComponent说明 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "MSComponent说明"; sourceTree = "<group>"; };
 		2C199CB81CE9C20E00303BBC /* MSProgressManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSProgressManager.h; sourceTree = "<group>"; };
@@ -105,7 +111,7 @@
 		2C4EC1FB1CE5812D00D6AF6B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2C4EC2031CE5812D00D6AF6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C4EC2061CE5812D00D6AF6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2C4EC2081CE5812D00D6AF6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		2C4EC2081CE5812D00D6AF6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C4EC20D1CE5812D00D6AF6B /* MarcusOCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarcusOCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C4EC2111CE5812D00D6AF6B /* MarcusOCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarcusOCTests.m; sourceTree = "<group>"; };
 		2C4EC2131CE5812D00D6AF6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -190,6 +196,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C0511B51D378B2400CCEB47 /* libz.tbd in Frameworks */,
+				2C0511B21D378AD600CCEB47 /* JavaScriptCore.framework in Frameworks */,
+				2C0511B01D3789F500CCEB47 /* JSPatch.framework in Frameworks */,
 				F95A23644108196F2E1C5A43 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,9 +223,27 @@
 		06F3F82A89D37A10F05F1D59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C0511B31D378AE700CCEB47 /* libz.tbd */,
+				2C0511B11D378AD600CCEB47 /* JavaScriptCore.framework */,
 				FC16728BC63FB3EEAFA4FF6B /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2C0511AD1D3789B100CCEB47 /* MSThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				2C0511AE1D3789F500CCEB47 /* JSPatch */,
+			);
+			path = MSThirdParty;
+			sourceTree = "<group>";
+		};
+		2C0511AE1D3789F500CCEB47 /* JSPatch */ = {
+			isa = PBXGroup;
+			children = (
+				2C0511AF1D3789F500CCEB47 /* JSPatch.framework */,
+			);
+			path = JSPatch;
 			sourceTree = "<group>";
 		};
 		2C097E201CEAC4C200324DF0 /* Gifs */ = {
@@ -272,6 +299,7 @@
 				2CE477391CE59B3800BAB436 /* MSHome */,
 				2CE477381CE59B2E00BAB436 /* MSDiscovery */,
 				2CE4773A1CE59B3800BAB436 /* MSMy */,
+				2C0511AD1D3789B100CCEB47 /* MSThirdParty */,
 				2CE4773C1CE5A04100BAB436 /* Resources */,
 				2C4EC2031CE5812D00D6AF6B /* Assets.xcassets */,
 				2C4EC1F71CE5812D00D6AF6B /* Supporting Files */,
@@ -310,6 +338,7 @@
 			children = (
 				2C4EC1FA1CE5812D00D6AF6B /* AppDelegate.h */,
 				2C4EC1FB1CE5812D00D6AF6B /* AppDelegate.m */,
+				2C4EC2081CE5812D00D6AF6B /* Info.plist */,
 				2C4EC2051CE5812D00D6AF6B /* LaunchScreen.storyboard */,
 			);
 			name = MSApp;
@@ -348,7 +377,6 @@
 		2C4EC23A1CE5833100D6AF6B /* MSHeader */ = {
 			isa = PBXGroup;
 			children = (
-				2C4EC2081CE5812D00D6AF6B /* Info.plist */,
 				2C4EC23D1CE5833100D6AF6B /* MSHeader.h */,
 				2C4EC23B1CE5833100D6AF6B /* MSColors.h */,
 				2C4EC23C1CE5833100D6AF6B /* MSDefines.h */,
@@ -996,6 +1024,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MarcusOC/MSThirdParty/JSPatch",
+				);
 				INFOPLIST_FILE = MarcusOC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MarcusOC.MarcusOC;
@@ -1010,6 +1042,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MarcusOC/MSThirdParty/JSPatch",
+				);
 				INFOPLIST_FILE = MarcusOC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MarcusOC.MarcusOC;
