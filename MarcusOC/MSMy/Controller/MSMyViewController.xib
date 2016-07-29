@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MSMyViewController">
             <connections>
+                <outlet property="textView" destination="Gn9-Xp-1Fy" id="laA-Ii-T9q"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,11 +26,50 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Gn9-Xp-1Fy">
+                    <rect key="frame" x="28" y="318" width="557" height="128"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="r4I-wu-PhP"/>
+                    </constraints>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p5e-EV-Oie">
+                    <rect key="frame" x="28" y="213" width="546" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="a2J-an-BCe"/>
+                    </constraints>
+                    <state key="normal" title="读取数据"/>
+                    <connections>
+                        <action selector="readDataClick:" destination="-1" eventType="touchUpInside" id="3VU-NH-Tbh"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KW7-rM-qzk">
+                    <rect key="frame" x="28" y="251" width="508" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="KqS-Mk-M8x"/>
+                    </constraints>
+                    <state key="normal" title="写入数据"/>
+                    <connections>
+                        <action selector="addDataClick:" destination="-1" eventType="touchUpInside" id="GWs-0I-71g"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="Gn9-Xp-1Fy" firstAttribute="top" secondItem="R61-Cb-deY" secondAttribute="bottom" constant="8" id="4qA-VG-FzU"/>
+                <constraint firstItem="Gn9-Xp-1Fy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="28" id="7ld-V4-zS8"/>
                 <constraint firstItem="R61-Cb-deY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FC6-Vf-XrZ"/>
+                <constraint firstAttribute="trailing" secondItem="p5e-EV-Oie" secondAttribute="trailing" constant="26" id="KFG-bA-ya7"/>
+                <constraint firstItem="R61-Cb-deY" firstAttribute="top" secondItem="KW7-rM-qzk" secondAttribute="bottom" constant="8" id="MIi-qL-2ad"/>
+                <constraint firstAttribute="trailing" secondItem="KW7-rM-qzk" secondAttribute="trailing" constant="64" id="OTB-Jl-NCj"/>
+                <constraint firstItem="KW7-rM-qzk" firstAttribute="top" secondItem="p5e-EV-Oie" secondAttribute="bottom" constant="8" id="QGr-wP-d0M"/>
+                <constraint firstItem="KW7-rM-qzk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="28" id="RxE-x0-oxv"/>
                 <constraint firstItem="R61-Cb-deY" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="qAt-pK-z6a"/>
+                <constraint firstAttribute="trailing" secondItem="Gn9-Xp-1Fy" secondAttribute="trailing" constant="15" id="x5T-RZ-HvC"/>
+                <constraint firstItem="p5e-EV-Oie" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="28" id="yGn-ke-yuR"/>
             </constraints>
         </view>
     </objects>

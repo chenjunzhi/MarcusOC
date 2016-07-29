@@ -8,10 +8,13 @@
 
 #import "MSMyViewController.h"
 #import <CoreData/CoreData.h>
+#import "MSTestModel.h"
 
 
 @interface MSMyViewController ()
 
+@property (nonatomic, strong) NSManagedObjectContext *context;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end
 
@@ -30,6 +33,14 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)addDataClick:(UIButton *)sender {
+    [self writeDataToTable];
+}
+
+- (IBAction)readDataClick:(UIButton *)sender {
+    [self readDataFromTable];
 }
 
 - (void)createCoreDataTable {
@@ -54,11 +65,45 @@
     
     
     //3、创建上下文
-    NSManagedObjectContext *context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+    self.context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
     
     //关联持久化助理
-    [context setPersistentStoreCoordinator:store];
+    [self.context setPersistentStoreCoordinator:store];
     
+}
+
+- (void)writeDataToTable {
+    MSTestModel *model = [NSEntityDescription insertNewObjectForEntityForName:@"MSTestModel" inManagedObjectContext:self.context];
+    model.name = @"测试数据";
+    model.sex = @(1);
+    model.grade = @(99);
+    
+    NSError *error = nil;
+    [self.context save:&error];
+    
+    if (error) {
+        NSLog(@"%@",error);
+    }
+}
+
+- (void)readDataFromTable {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"MSTestModel"];
+    NSPredicate *pre = [NSPredicate predicateWithFormat:@"name = %@",@"测试数据"];
+    request.predicate = pre;
+    
+    NSSortDescriptor *heigtSort = [NSSortDescriptor sortDescriptorWithKey:@"sex" ascending:NO];
+    request.sortDescriptors = @[heigtSort];
+    
+
+    NSError *error = nil;
+    NSArray *temps = [self.context executeFetchRequest:request error:&error];
+    if (error) {
+        NSLog(@"error");
+    }
+    
+    for (MSTestModel *model in temps) {
+        self.textView.text = [NSString stringWithFormat:@"%@ %@ %@",model.name,model.sex,model.grade];
+    }
 }
 
 /*

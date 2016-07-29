@@ -12,12 +12,13 @@
 3、MSCategories: 系统类的分类
 4、MSComponent: 三方库的再封装
 5、MSCustom: 自己封装的类
+6、MSThirdParty: 三方库中不支持pod管理的库
 
-6、MSRoot: app的根控制器(UITabBarController)
-7、MSHome: app的首页
-8、MSDiscovery: app的发现
-9、MSMy: app的我的
-10、Resources: 图片资源、国际化字符
+7、MSRoot: app的根控制器(UITabBarController)
+8、MSHome: app的首页
+9、MSDiscovery: app的发现
+10、MSMy: app的我的
+11、Resources: 图片资源、国际化字符
 
 
 

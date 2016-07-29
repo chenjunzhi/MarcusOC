@@ -62,8 +62,9 @@
         if ([[dic valueForKey:@"error_code"] integerValue] == 0) {
             NSDictionary *result = [dic objectForKey:@"result"];
             self.weatherModel = [MSWeatherModel yy_modelWithJSON:[result objectForKey:@"data"]];
-            [self refreshView];
         }
+        
+        [self refreshView];
     }
     [MSProgressManager hideLoading];
 }
