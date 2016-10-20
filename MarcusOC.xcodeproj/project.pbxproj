@@ -15,6 +15,8 @@
 		2C199CBA1CE9C20E00303BBC /* MSProgressManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C199CB91CE9C20E00303BBC /* MSProgressManager.m */; };
 		2C2C77CF1D2B91E80029FD46 /* MSWeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2C77CE1D2B91E80029FD46 /* MSWeatherModel.m */; };
 		2C2C77D21D2BBC3F0029FD46 /* UINavigationController+MSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2C77D11D2BBC3F0029FD46 /* UINavigationController+MSCategory.m */; };
+		2C33ACE31DB8BBCB00856B88 /* MSDiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C33ACE11DB8BBCB00856B88 /* MSDiscoveryViewController.m */; };
+		2C33ACE41DB8BBCB00856B88 /* MSDiscoveryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C33ACE21DB8BBCB00856B88 /* MSDiscoveryViewController.xib */; };
 		2C3726101D0543FF00255A9B /* MSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C37260E1D0543FF00255A9B /* MSHomeViewController.m */; };
 		2C3726111D0543FF00255A9B /* MSHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C37260F1D0543FF00255A9B /* MSHomeViewController.xib */; };
 		2C3726151D054EAA00255A9B /* MSWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3726131D054EAA00255A9B /* MSWeatherViewController.m */; };
@@ -97,6 +99,9 @@
 		2C2C77CE1D2B91E80029FD46 /* MSWeatherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSWeatherModel.m; sourceTree = "<group>"; };
 		2C2C77D01D2BBC3F0029FD46 /* UINavigationController+MSCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+MSCategory.h"; sourceTree = "<group>"; };
 		2C2C77D11D2BBC3F0029FD46 /* UINavigationController+MSCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+MSCategory.m"; sourceTree = "<group>"; };
+		2C33ACE01DB8BBCB00856B88 /* MSDiscoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSDiscoveryViewController.h; sourceTree = "<group>"; };
+		2C33ACE11DB8BBCB00856B88 /* MSDiscoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSDiscoveryViewController.m; sourceTree = "<group>"; };
+		2C33ACE21DB8BBCB00856B88 /* MSDiscoveryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSDiscoveryViewController.xib; sourceTree = "<group>"; };
 		2C37260D1D0543FF00255A9B /* MSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeViewController.h; sourceTree = "<group>"; };
 		2C37260E1D0543FF00255A9B /* MSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeViewController.m; sourceTree = "<group>"; };
 		2C37260F1D0543FF00255A9B /* MSHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSHomeViewController.xib; sourceTree = "<group>"; };
@@ -258,6 +263,16 @@
 			path = MSProgressManager;
 			sourceTree = "<group>";
 		};
+		2C33ACDF1DB8BBCB00856B88 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2C33ACE01DB8BBCB00856B88 /* MSDiscoveryViewController.h */,
+				2C33ACE11DB8BBCB00856B88 /* MSDiscoveryViewController.m */,
+				2C33ACE21DB8BBCB00856B88 /* MSDiscoveryViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		2C4EC1EB1CE5812C00D6AF6B = {
 			isa = PBXGroup;
 			children = (
@@ -406,7 +421,7 @@
 			children = (
 				2CE477831CE5AC0700BAB436 /* Model */,
 				2CE477841CE5AC0700BAB436 /* View */,
-				2CE477821CE5AC0700BAB436 /* Controller */,
+				2C33ACDF1DB8BBCB00856B88 /* Controller */,
 			);
 			path = MSDiscovery;
 			sourceTree = "<group>";
@@ -577,13 +592,6 @@
 			children = (
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		2CE477821CE5AC0700BAB436 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		2CE477831CE5AC0700BAB436 /* Model */ = {
@@ -782,6 +790,7 @@
 				2C4EC2041CE5812D00D6AF6B /* Assets.xcassets in Resources */,
 				2CE477541CE5A3B000BAB436 /* icon_tabbar_discovery_selected@2x.png in Resources */,
 				2C8468E61D24FFC200D7FA49 /* MSCustom说明 in Resources */,
+				2C33ACE41DB8BBCB00856B88 /* MSDiscoveryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -871,6 +880,7 @@
 				2CE4776C1CE5A63200BAB436 /* NSString+MSCategory.m in Sources */,
 				2CE1EAE71D338458006D36EC /* testModel.xcdatamodeld in Sources */,
 				2C4EC1FC1CE5812D00D6AF6B /* AppDelegate.m in Sources */,
+				2C33ACE31DB8BBCB00856B88 /* MSDiscoveryViewController.m in Sources */,
 				2C4EC2431CE5833100D6AF6B /* MSRequstManager.m in Sources */,
 				2CE4776B1CE5A63200BAB436 /* NSSet+MSCategory.m in Sources */,
 				2CE4776A1CE5A63200BAB436 /* NSDictionary+MSCategory.m in Sources */,
