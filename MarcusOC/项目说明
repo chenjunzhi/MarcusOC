@@ -5,13 +5,12 @@
 4、项目采用国际化方式，避免直接赋值
 5、注释、注释、注释  重要的事情说三遍 （类，函数，定义等都需要有注释）
 
-
 分组介绍：
 1、MSApp: AppDelegate, 配置, 全局单例
 2、MSHeader: 全局 头文件、颜色值定义、宏定义、图片
 3、MSCategories: 系统类的分类
-4、MSComponent: 三方库的再封装
-5、MSCustom: 自己封装的类
+4、MSComponent: 三方库的再封装(尽可能不要在项目中直接使用三方库，复用率较高的(复用次数超过五次的)一定要进行再封装后再使用)
+5、MSCustom: 自己封装的类：包括MSBaseViewController 以及常用效果的封装
 6、MSThirdParty: 三方库中不支持pod管理的库
 
 7、MSRoot: app的根控制器(UITabBarController)
@@ -19,11 +18,6 @@
 9、MSDiscovery: app的发现
 10、MSMy: app的我的
 11、Resources: 图片资源、国际化字符
-
-
-
-
-
 
 概念说明：
 1、UUID：是基于iOS设备上面某个单个的应用程序，只要用户没有完全删除应用程序，则这个UUID在用户使用该应用程序的时候一直保持不变。如果用户删除了这个应用程序，然后再重新安装，那么这个UUID已经发生了改变。通过调用[[UIDevice currentDevice] identifierForVendor];方法可以获取UUID。UUID不好的地方就是用户删除了你开发的程序以后，基本上你就不可能获取之前的数据了。

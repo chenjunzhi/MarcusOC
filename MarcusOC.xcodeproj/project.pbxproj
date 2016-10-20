@@ -62,8 +62,6 @@
 		2CE4776C1CE5A63200BAB436 /* NSString+MSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477671CE5A63200BAB436 /* NSString+MSCategory.m */; };
 		2CE4776E1CE5A66D00BAB436 /* 项目说明 in Resources */ = {isa = PBXBuildFile; fileRef = 2CE4776D1CE5A66D00BAB436 /* 项目说明 */; };
 		2CE4777E1CE5ABE200BAB436 /* MSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE4777B1CE5ABE200BAB436 /* MSRootViewController.m */; };
-		2CE477951CE5ADA200BAB436 /* MSDiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477931CE5ADA200BAB436 /* MSDiscoveryViewController.m */; };
-		2CE477961CE5ADA200BAB436 /* MSDiscoveryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CE477941CE5ADA200BAB436 /* MSDiscoveryViewController.xib */; };
 		2CE4779A1CE5ADD500BAB436 /* MSMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE477981CE5ADD500BAB436 /* MSMyViewController.m */; };
 		2CE4779B1CE5ADD500BAB436 /* MSMyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CE477991CE5ADD500BAB436 /* MSMyViewController.xib */; };
 		2CEBC8561D224FEE00DF2D4E /* MSAPIWeatherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEBC8551D224FEE00DF2D4E /* MSAPIWeatherManager.m */; };
@@ -178,9 +176,6 @@
 		2CE4776D1CE5A66D00BAB436 /* 项目说明 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "项目说明"; sourceTree = "<group>"; };
 		2CE4777A1CE5ABE200BAB436 /* MSRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSRootViewController.h; sourceTree = "<group>"; };
 		2CE4777B1CE5ABE200BAB436 /* MSRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSRootViewController.m; sourceTree = "<group>"; };
-		2CE477921CE5ADA200BAB436 /* MSDiscoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSDiscoveryViewController.h; path = ../MSDiscoveryViewController.h; sourceTree = "<group>"; };
-		2CE477931CE5ADA200BAB436 /* MSDiscoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSDiscoveryViewController.m; path = ../MSDiscoveryViewController.m; sourceTree = "<group>"; };
-		2CE477941CE5ADA200BAB436 /* MSDiscoveryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MSDiscoveryViewController.xib; path = ../MSDiscoveryViewController.xib; sourceTree = "<group>"; };
 		2CE477971CE5ADD500BAB436 /* MSMyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMyViewController.h; sourceTree = "<group>"; };
 		2CE477981CE5ADD500BAB436 /* MSMyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMyViewController.m; sourceTree = "<group>"; };
 		2CE477991CE5ADD500BAB436 /* MSMyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSMyViewController.xib; sourceTree = "<group>"; };
@@ -587,9 +582,6 @@
 		2CE477821CE5AC0700BAB436 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2CE477921CE5ADA200BAB436 /* MSDiscoveryViewController.h */,
-				2CE477931CE5ADA200BAB436 /* MSDiscoveryViewController.m */,
-				2CE477941CE5ADA200BAB436 /* MSDiscoveryViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -725,6 +717,7 @@
 				TargetAttributes = {
 					2C4EC1F31CE5812D00D6AF6B = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 23DLV7ATD9;
 					};
 					2C4EC20C1CE5812D00D6AF6B = {
 						CreatedOnToolsVersion = 7.3;
@@ -784,7 +777,6 @@
 				2CE4775C1CE5A3B000BAB436 /* icon_tabbar_my_selected@2x.png in Resources */,
 				2C3726161D054EAA00255A9B /* MSWeatherViewController.xib in Resources */,
 				2C3726111D0543FF00255A9B /* MSHomeViewController.xib in Resources */,
-				2CE477961CE5ADA200BAB436 /* MSDiscoveryViewController.xib in Resources */,
 				2CE4775B1CE5A3B000BAB436 /* icon_tabbar_my_normal@3x.png in Resources */,
 				2CE477561CE5A3B000BAB436 /* icon_tabbar_home_normal@2x.png in Resources */,
 				2C4EC2041CE5812D00D6AF6B /* Assets.xcassets in Resources */,
@@ -869,7 +861,6 @@
 				2C3726151D054EAA00255A9B /* MSWeatherViewController.m in Sources */,
 				2C5585E51CFAB7AB001913AA /* UILabel+MSCategory.m in Sources */,
 				2C779CD11D34C9480041775D /* MSTestModel+CoreDataProperties.m in Sources */,
-				2CE477951CE5ADA200BAB436 /* MSDiscoveryViewController.m in Sources */,
 				2C199CBA1CE9C20E00303BBC /* MSProgressManager.m in Sources */,
 				2C8468F21D250A7600D7FA49 /* NSObject+MSCategory.m in Sources */,
 				2C8468EF1D25006E00D7FA49 /* MSBaseViewController.m in Sources */,
@@ -971,7 +962,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1010,7 +1001,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1023,6 +1014,7 @@
 			baseConfigurationReference = 914A0B962682C00004AE0DDA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 23DLV7ATD9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1030,7 +1022,7 @@
 				);
 				INFOPLIST_FILE = MarcusOC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.MarcusOC.MarcusOC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xinlonghang.MarcusOC.MarcusOC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1041,6 +1033,7 @@
 			baseConfigurationReference = FA166E5AD57D4CCB7310BD8B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 23DLV7ATD9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1048,7 +1041,7 @@
 				);
 				INFOPLIST_FILE = MarcusOC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.MarcusOC.MarcusOC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xinlonghang.MarcusOC.MarcusOC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
