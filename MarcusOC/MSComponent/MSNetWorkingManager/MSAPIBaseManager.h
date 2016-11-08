@@ -34,18 +34,14 @@
  *  如果拼接了参数，同样的参数在MSAPIManagerParamSourceDelegate也赋值了，则会取MSAPIManagerParamSourceDelegate里的值
  */
 @property (nonatomic, strong) NSString *url;
-/**
- *  网络请求类型
- */
+
+/** 网络请求类型*/
 @property (nonatomic, assign) MSAPIManagerRequestType requestType;
 
-/**
- *  请求回调delegate
- */
+/** 请求回调delegate*/
 @property (nonatomic, weak) id<MSAPIManagerApiCallBackDelegate> delegate;
-/**
- *  请求参数delegate
- */
+
+/**请求参数delegate*/
 @property (nonatomic, weak) id<MSAPIManagerParamSourceDelegate> paramSource;
 /***************************************入参**********************************************************/
 
@@ -57,7 +53,7 @@
 @property (nonatomic, readonly) MSAPIManagerErrorType errorType;
 @property (nonatomic, strong) id responseObject;
 
-//尽量使用loadData这个方法,这个方法会通过param source来获得参数，这使得参数的生成逻辑位于controller中的固定位置
+//使用loadData这个方法来请求数据,这个方法会通过param source来获得参数，这使得参数的生成逻辑位于controller中的固定位置
 - (void)loadData;
 
 - (void)cancelAllRequest;

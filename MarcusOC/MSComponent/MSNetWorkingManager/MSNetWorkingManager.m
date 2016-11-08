@@ -166,7 +166,7 @@
                       success:successWrap
                       failure:failureWrap];
     }
-    else
+    else if (requestType == MSAPIManagerRequestTypeGet)
     {
         // 检查url
         if (![NSURL URLWithString:url]) {

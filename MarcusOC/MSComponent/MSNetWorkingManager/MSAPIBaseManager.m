@@ -44,14 +44,14 @@
     self.task = [[MSNetWorkingManager sharedManager]callApiWithUrl:self.url params:self.params?:@{} requestType:self.requestType success:^(id responseObject, MSAPIManagerErrorType errorType) {
         if (weakSelf.delegate) {
             if (errorType == MSAPIManagerErrorTypeSuccess) {
-                self.errorType = MSAPIManagerErrorTypeSuccess;
+                weakSelf.errorType = MSAPIManagerErrorTypeSuccess;
                 if ([weakSelf.delegate respondsToSelector:@selector(managerCallAPIDidSuccess:)] ) {
                     weakSelf.responseObject = responseObject;
                     [weakSelf.delegate managerCallAPIDidSuccess:weakSelf];
                     weakSelf.task = nil;
                 }
             }else {
-                self.errorType = errorType;
+                weakSelf.errorType = errorType;
                 if ([weakSelf.delegate respondsToSelector:@selector(managerCallAPIDidFailed:)]) {
                     [weakSelf.delegate managerCallAPIDidFailed:weakSelf];
                     weakSelf.task = nil;

@@ -111,53 +111,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MarcusOC/MSComponent/MSNetWorkingManager/MSAPIBaseManager.m"
-            timestampString = "498640020.993146"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "-loadData"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[MSAPIBaseManager loadData]"
-                  moduleName = "MarcusOC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/marcus/Desktop/MarcusOC/MarcusOC/MSComponent/MSNetWorkingManager/MSAPIBaseManager.m"
-                  timestampString = "498645633.19988"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "328">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__28-[MSAPIBaseManager loadData]_block_invoke"
-                  moduleName = "MarcusOC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/marcus/Desktop/MarcusOC/MarcusOC/MSComponent/MSNetWorkingManager/MSAPIBaseManager.m"
-                  timestampString = "498645633.201052"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "60">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
