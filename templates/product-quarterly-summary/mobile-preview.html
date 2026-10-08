@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>产品季度总结 · 手机预览</title>
+  <style>
+    :root {
+      --blue: #1a56db;
+      --blue-dark: #1e3a5f;
+      --blue-light: #e8f0fe;
+      --text: #1e293b;
+      --muted: #64748b;
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
+      background: #f1f5f9;
+      color: var(--text);
+      padding: 12px 12px 32px;
+      -webkit-text-size-adjust: 100%;
+    }
+    .hint {
+      background: #fff;
+      border-left: 4px solid var(--blue);
+      padding: 12px 14px;
+      border-radius: var(--radius);
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .slide {
+      background: #fff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 12px rgba(30, 58, 95, 0.08);
+    }
+    .slide-bar { height: 4px; background: var(--blue); }
+    .slide-inner { padding: 20px 18px 22px; }
+    .slide-num {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--blue);
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+    h1 { font-size: 26px; line-height: 1.25; margin-bottom: 8px; }
+    h2 { font-size: 20px; margin-bottom: 14px; color: var(--blue-dark); }
+    .sub { font-size: 15px; color: var(--muted); margin-bottom: 6px; }
+    .cover-panel {
+      background: linear-gradient(135deg, var(--blue) 0%, #2563eb 100%);
+      color: #fff;
+      padding: 28px 20px;
+      margin: -20px -18px 20px;
+    }
+    .cover-panel .en { opacity: 0.85; font-size: 13px; letter-spacing: 0.12em; margin-bottom: 12px; }
+    .cover-panel h1 { color: #fff; font-size: 28px; }
+    .cover-panel .sub { color: rgba(255,255,255,0.85); }
+    .card {
+      background: var(--blue-light);
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 10px;
+    }
+    .card strong { display: block; font-size: 15px; color: var(--blue-dark); margin-bottom: 6px; }
+    .card p { font-size: 14px; color: var(--muted); line-height: 1.45; }
+    ul { padding-left: 1.1em; }
+    li { font-size: 15px; line-height: 1.55; margin-bottom: 10px; color: var(--text); }
+    .metric {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px;
+      border-radius: 10px;
+      margin-bottom: 8px;
+      background: var(--blue-light);
+    }
+    .metric:nth-child(even) { background: #fff; border: 1px solid #e2e8f0; }
+    .metric .name { font-size: 14px; flex: 1; }
+    .metric .val { font-size: 22px; font-weight: 700; color: var(--blue); margin: 0 12px; }
+    .metric .delta { font-size: 12px; color: var(--muted); text-align: right; min-width: 72px; }
+    .timeline { position: relative; padding-left: 8px; }
+    .month { margin-bottom: 18px; padding-left: 16px; border-left: 3px solid var(--blue); }
+    .month b { color: var(--blue-dark); font-size: 15px; }
+    .month ul { margin-top: 8px; }
+    .month li { font-size: 14px; margin-bottom: 6px; }
+    .cols { display: grid; gap: 10px; }
+    .col-h {
+      background: var(--blue);
+      color: #fff;
+      padding: 10px 12px;
+      border-radius: 8px 8px 0 0;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .col-h.alt { background: var(--blue-dark); }
+    .col-b {
+      border: 1px solid #e2e8f0;
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      padding: 12px;
+      margin-bottom: 4px;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { border: 1px solid #e2e8f0; padding: 10px 8px; text-align: left; vertical-align: top; }
+    th { background: var(--blue); color: #fff; font-weight: 600; }
+    tr:nth-child(even) td { background: var(--blue-light); }
+    .closing {
+      text-align: center;
+      background: var(--blue);
+      color: #fff;
+      padding: 36px 20px;
+      margin: -20px -18px -22px;
+    }
+    .closing h2 { color: #fff; font-size: 28px; margin-bottom: 8px; }
+    .closing .qa { font-size: 18px; opacity: 0.9; }
+    .closing .contact { margin-top: 20px; font-size: 12px; opacity: 0.75; }
+    .toc-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .toc-num {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .toc-item:nth-child(odd) .toc-num { background: var(--blue); color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="hint">
+    这是与 PPT 同内容的<strong>手机预览页</strong>。在浏览器中上下滑动即可逐页查看；需要编辑请下载同目录下的 <code>.pptx</code>，用 WPS 或 Microsoft PowerPoint 打开。
+  </div>
+
+  <article class="slide">
+    <div class="cover-panel">
+      <div class="en">QUARTERLY REVIEW</div>
+      <h1>产品季度总结</h1>
+      <p class="sub">20__ 年第 __ 季度</p>
+      <p class="sub">汇报部门 / 汇报人</p>
+    </div>
+    <div class="slide-inner"><span class="slide-num">01 / 10</span></div>
+  </article>
+
+  <article class="slide">
+    <div class="slide-bar"></div>
+    <div class="slide-inner">
+      <span class="slide-num">02 / 10</span>
+      <h2>目录</h2>
+      <div class="toc-item"><span class="toc-num">01</span><span>季度概览</span></div>
+      <div class="toc-item"><span class="toc-num">02</span><span>核心指标与数据</span></div>
+      <div class="toc-item"><span class="toc-num">03</span><span>产品进展与迭代</span></div>
+      <div class="toc-item"><span class="toc-num">04</span><span>亮点与成果</span></div>
+      <div class="toc-item"><span class="toc-num">05</span><span>问题与挑战</span></div>
+      <div class="toc-item"><span class="toc-num">06</span><span>下季度规划</span></div>
+    </div>
+  </article>
+
+  <article class="slide">
+    <div class="slide-bar"></div>
+    <div class="slide-inner">
+      <span class="slide-num">03 / 10</span>
+      <h2>季度概览</h2>
+      <div class="card"><strong>本季目标</strong><p>简要描述本季度产品目标与战略重点</p></div>
+      <div class="card"><strong>整体结论</strong><p>一句话总结本季度达成情况</p></div>
+      <div class="card"><strong>关键变化</strong><p>市场、用户或业务侧的重要变化</p></div>
+    </div>
+  </article>
+
+  <article class="slide">
+    <div class="slide-bar"></div>
+    <div class="slide-inner">
+      <span class="slide-num">04 / 10</span>
+      <h2>核心指标与数据</h2>
+      <div class="metric"><span class="name">DAU / MAU</span><span class="val">—</span><span class="delta">环比 +__%</span></div>
+      <div class="metric"><span class="name">留存率</span><span class="val">—</span><span class="delta">目标 __%</span></div>
+      <div class="metric"><span class="name">转化率</span><span class="val">—</span><span class="delta">环比 +__%</span></div>
+      <div class="metric"><span class="name">NPS / 满意度</span><span class="val">—</span><span class="delta">较上季 +__</span></div>
+      <p class="sub" style="margin-top:12px">可替换为真实数据并补充趋势图</p>
+    </div>
+  </article>
+
+  <article class="slide">
+    <div class="slide-bar"></div>
+    <div class="slide-inner">
+      <span class="slide-num">05 / 10</span>
+      <h2>产品进展与迭代</h2>
+      <div class="timeline">
+        <div class="month"><b>M1</b><ul><li>版本 x.x 发布</li><li>功能 A 上线</li></ul></div>
+        <div class="month"><b>M2</b><ul><li>体验优化</li><li>关键 Bug 修复</li></ul></div>
+        <div class="month"><b>M3</b><ul><li>里程碑交付</li><li>协作项目结项</li></ul></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="slide">
+    <div class="slide-bar"></div>
+    <div class="slide-inner">
+      <span class="slide-num">06 / 10</span>
+      <h2>亮点与成果</h2>
+      <ul>
+        <li>业务增长：描述核心增长数据与驱动因素</li>
+        <li>产品创新：本季重要功能或体验升级</li>
+        <li>用户价值：典型案例或用户反馈摘要</li>
+        <li>团队协同：跨部门协作成果（可选）</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="slide">
+    <div class="slide-bar"></div>
+    <div class="slide-inner">
+      <span class="slide-num">07 / 10</span>
+      <h2>问题与挑战</h2>
+      <div class="cols">
+        <div><div class="col-h">主要问题</div><div class="col-b"><ul>
+          <li>问题一：现象与影响</li>
+          <li>问题二：根因简述</li>
+          <li>问题三：当前应对状态</li>
+        </ul></div></div>
+        <div><div class="col-h alt">风险与对策</div><div class="col-b"><ul>
+          <li>风险：潜在影响范围</li>
+          <li>对策：已采取 / 计划措施</li>
+          <li>需支持：资源或决策诉求</li>
+        </ul></div></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="slide">
+    <div class="slide-bar"></div>
+    <div class="slide-inner">
+      <span class="slide-num">08 / 10</span>
+      <h2>下季度规划</h2>
+      <table>
+        <thead><tr><th>目标</th><th>关键结果</th><th>Owner</th></tr></thead>
+        <tbody>
+          <tr><td>目标 O1</td><td>可衡量的目标描述</td><td>负责人</td></tr>
+          <tr><td>目标 O2</td><td>可衡量的目标描述</td><td>负责人</td></tr>
+          <tr><td>目标 O3</td><td>可衡量的目标描述</td><td>负责人</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </article>
+
+  <article class="slide">
+    <div class="slide-bar"></div>
+    <div class="slide-inner">
+      <span class="slide-num">09 / 10</span>
+      <h2>附录</h2>
+      <p class="sub">详细数据、版本清单、用户调研等可放在附录页</p>
+    </div>
+  </article>
+
+  <article class="slide">
+    <div class="closing">
+      <h2>感谢聆听</h2>
+      <p class="qa">Q &amp; A</p>
+      <p class="contact">联系方式：name@company.com</p>
+    </div>
+    <div class="slide-inner"><span class="slide-num">10 / 10</span></div>
+  </article>
+</body>
+</html>
