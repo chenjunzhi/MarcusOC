@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>打开产品季度总结 PPT</title>
+  <style>
+    :root { --blue: #1a56db; --bg: #f8fafc; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+      background: var(--bg);
+      min-height: 100vh;
+      padding: 24px 20px 40px;
+      color: #1e293b;
+    }
+    h1 { font-size: 22px; margin-bottom: 8px; }
+    p { font-size: 14px; color: #64748b; line-height: 1.6; margin-bottom: 24px; }
+    a.btn {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      background: var(--blue);
+      color: #fff;
+      font-size: 17px;
+      font-weight: 600;
+      padding: 16px 18px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 14px rgba(26, 86, 219, 0.35);
+    }
+    a.btn.secondary {
+      background: #fff;
+      color: var(--blue);
+      border: 2px solid var(--blue);
+      box-shadow: none;
+    }
+    .steps {
+      margin-top: 28px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 16px;
+      font-size: 13px;
+      color: #475569;
+      line-height: 1.65;
+    }
+    .steps strong { color: #1e293b; }
+    .steps ol { padding-left: 1.2em; margin-top: 8px; }
+    .steps li { margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+  <h1>产品季度总结 PPT</h1>
+  <p>以下为<strong>最终 .pptx 文件</strong>（与 PowerPoint 中打开相同），请在手机浏览器中操作。</p>
+
+  <a class="btn" id="view" href="#">在线查看 PPT（推荐）</a>
+  <a class="btn secondary" id="download" href="#">下载 PPT 文件</a>
+
+  <div class="steps">
+    <strong>若「在线查看」无法打开：</strong>
+    <ol>
+      <li>点「下载 PPT 文件」，保存到手机</li>
+      <li>iPhone：在「文件」中打开 → 分享 → WPS / Microsoft PowerPoint</li>
+      <li>Android：下载完成后用 WPS 或 PowerPoint 打开</li>
+      <li>微信用户：可转发到「文件传输助手」后选「用其他应用打开」</li>
+    </ol>
+  </div>
+
+  <script>
+    var pptx =
+      "https://raw.githubusercontent.com/chenjunzhi/MarcusOC/cursor/product-quarterly-ppt-template-ad07/templates/product-quarterly-summary/product-quarterly-summary-blue.pptx";
+    document.getElementById("download").href = pptx;
+    document.getElementById("view").href =
+      "https://view.officeapps.live.com/op/view.aspx?src=" + encodeURIComponent(pptx);
+  </script>
+</body>
+</html>
