@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>工单账单查询</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      font-size: 12px;
+      color: #333;
+      background: #fff;
+      min-height: 100vh;
+    }
+
+    .page {
+      padding: 16px 20px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .watermark {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      opacity: 0.06;
+      background-image: repeating-linear-gradient(
+        -25deg,
+        transparent,
+        transparent 120px,
+        #999 120px,
+        #999 121px
+      );
+    }
+    .watermark::after {
+      content: "marcus chen  marcus2015@163.com  2025-10-09  内部系统";
+      position: absolute;
+      inset: -20%;
+      font-size: 14px;
+      color: #666;
+      transform: rotate(-25deg);
+      white-space: pre;
+      line-height: 80px;
+      word-spacing: 40px;
+    }
+
+    .content { position: relative; z-index: 1; }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #333;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e8e8e8;
+      margin-bottom: 14px;
+    }
+
+    .query-form {
+      margin-bottom: 20px;
+    }
+
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+      align-items: center;
+    }
+
+    .form-item {
+      display: flex;
+      align-items: center;
+      width: 33.33%;
+      min-width: 360px;
+      padding-right: 24px;
+      margin-bottom: 6px;
+    }
+
+    .form-item label {
+      width: 72px;
+      flex-shrink: 0;
+      text-align: right;
+      padding-right: 8px;
+      color: #333;
+      line-height: 28px;
+    }
+    .form-item label .req { color: #f5222d; margin-right: 2px; }
+
+    .control {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    input[type="text"],
+    select {
+      height: 28px;
+      line-height: 26px;
+      border: 1px solid #d9d9d9;
+      border-radius: 2px;
+      padding: 0 8px;
+      font-size: 12px;
+      color: #333;
+      width: 100%;
+      background: #fff;
+    }
+    select { color: #bfbfbf; }
+    select.has-value { color: #333; }
+
+    .date-range {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      gap: 6px;
+    }
+    .date-input {
+      flex: 1;
+      position: relative;
+    }
+    .date-input input {
+      width: 100%;
+      padding-left: 28px;
+    }
+    .date-input::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 7px;
+      width: 12px;
+      height: 12px;
+      border: 1px solid #999;
+      border-radius: 1px;
+      opacity: 0.7;
+    }
+    .date-sep { color: #999; flex-shrink: 0; }
+
+    .form-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      padding-top: 4px;
+      margin-top: 4px;
+    }
+
+    .btn {
+      height: 28px;
+      min-width: 64px;
+      padding: 0 14px;
+      font-size: 12px;
+      border-radius: 2px;
+      cursor: pointer;
+      border: 1px solid #1890ff;
+    }
+    .btn-primary {
+      background: #1890ff;
+      color: #fff;
+      border-color: #1890ff;
+    }
+    .btn-default {
+      background: #fff;
+      color: #1890ff;
+    }
+
+    .list-tabs {
+      margin-bottom: 10px;
+      font-size: 13px;
+      color: #666;
+    }
+    .list-tabs .active {
+      color: #1890ff;
+      font-weight: 600;
+    }
+    .list-tabs span { margin: 0 4px; color: #d9d9d9; }
+
+    .table-wrap {
+      border: 1px solid #e8e8e8;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      min-width: 2400px;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    thead th {
+      background: #fafafa;
+      border: 1px solid #e8e8e8;
+      padding: 8px 6px;
+      font-weight: 600;
+      color: #333;
+      text-align: center;
+      white-space: nowrap;
+      font-size: 12px;
+    }
+
+    tbody td {
+      border: 1px solid #e8e8e8;
+      padding: 7px 6px;
+      text-align: center;
+      color: #333;
+      white-space: nowrap;
+      font-size: 12px;
+      background: #fff;
+    }
+
+    tbody tr:hover td { background: #f5faff; }
+
+    .col-check { width: 36px; }
+    .col-ops { width: 100px; }
+    .sortable::after {
+      content: "⇅";
+      font-size: 10px;
+      color: #bfbfbf;
+      margin-left: 2px;
+    }
+
+    .link {
+      color: #1890ff;
+      cursor: pointer;
+      margin: 0 4px;
+    }
+
+    .status-tag {
+      display: inline-block;
+      padding: 0 6px;
+      line-height: 18px;
+      border-radius: 2px;
+      font-size: 11px;
+    }
+    .st-settled { background: #f6ffed; color: #389e0d; border: 1px solid #b7eb8f; }
+    .st-pending { background: #fff7e6; color: #d46b08; border: 1px solid #ffd591; }
+    .st-unsettled { background: #f5f5f5; color: #666; border: 1px solid #d9d9d9; }
+
+    .tip-icon {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      line-height: 14px;
+      text-align: center;
+      border-radius: 50%;
+      background: #faad14;
+      color: #fff;
+      font-size: 10px;
+      vertical-align: middle;
+      margin-left: 2px;
+      cursor: help;
+    }
+
+    .pagination {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      padding: 12px 0 0;
+      font-size: 12px;
+      color: #666;
+    }
+    .pagination select {
+      width: auto;
+      height: 26px;
+    }
+    .page-btn {
+      min-width: 26px;
+      height: 26px;
+      border: 1px solid #d9d9d9;
+      background: #fff;
+      color: #333;
+      cursor: pointer;
+      border-radius: 2px;
+    }
+    .page-btn.active {
+      border-color: #1890ff;
+      color: #1890ff;
+    }
+    .page-btn:disabled { color: #ccc; cursor: not-allowed; }
+  </style>
+</head>
+<body>
+  <div class="watermark" aria-hidden="true"></div>
+  <div class="page">
+    <div class="content">
+      <section class="query-form">
+        <div class="section-title">查询条件</div>
+
+        <div class="form-row">
+          <div class="form-item">
+            <label><span class="req">*</span>就诊日期</label>
+            <div class="control">
+              <div class="date-range">
+                <div class="date-input"><input type="text" id="visitStart" value="2025-04-09" readonly /></div>
+                <span class="date-sep">-</span>
+                <div class="date-input"><input type="text" id="visitEnd" value="2025-10-09" readonly /></div>
+              </div>
+            </div>
+          </div>
+          <div class="form-item">
+            <label>工单号</label>
+            <div class="control">
+              <input type="text" placeholder="请输入工单号" />
+            </div>
+          </div>
+          <div class="form-item">
+            <label>结算状态</label>
+            <div class="control">
+              <select>
+                <option>请选择结算状态</option>
+                <option>已结算</option>
+                <option>待结算</option>
+                <option>未结算</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-item">
+            <label>工单状态</label>
+            <div class="control">
+              <select>
+                <option>请选择工单状态</option>
+                <option>待派单</option>
+                <option>已派单</option>
+                <option>服务中</option>
+                <option>已完成</option>
+                <option>已取消</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-item">
+            <label>签约主体</label>
+            <div class="control">
+              <select>
+                <option>请选择签约主体</option>
+                <option>小诺</option>
+                <option>HMC</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-item">
+            <label>账单类型</label>
+            <div class="control">
+              <select>
+                <option>请选择账单类型</option>
+                <option>服务费</option>
+                <option>挂号费</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-primary">查询</button>
+          <button type="button" class="btn btn-default">重置</button>
+          <button type="button" class="btn btn-default">清单导出</button>
+        </div>
+      </section>
+
+      <section class="result-section">
+        <div class="list-tabs">
+          <span class="active">账单工单列表(3)</span>
+          <span>/</span>
+          <span>待结算(1)</span>
+          <span>/</span>
+          <span>凭证异常(1)</span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th class="col-check"><input type="checkbox" /></th>
+                <th class="sortable">工单号</th>
+                <th>订单号</th>
+                <th>服务实施记录号</th>
+                <th>工单状态</th>
+                <th>账单类型</th>
+                <th class="sortable">就诊日期</th>
+                <th>结算状态</th>
+                <th>派单对接人</th>
+                <th>客户姓名</th>
+                <th class="sortable">派单日期</th>
+                <th>签约主体</th>
+                <th>服务名称</th>
+                <th>是否指定医生（权益）</th>
+                <th>服务价格</th>
+                <th>
+                  挂号费
+                  <span class="tip-icon" title="发送结算单前请与派单人核对">!</span>
+                </th>
+                <th>服务凭证审核状态</th>
+                <th>服务凭证风险提示</th>
+                <th class="col-ops">操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td>WO202510080012</td>
+                <td>ORD202510070889</td>
+                <td>SIR202510080045</td>
+                <td>已完成</td>
+                <td>服务费</td>
+                <td>2025-10-05</td>
+                <td><span class="status-tag st-settled">已结算</span></td>
+                <td>张明</td>
+                <td>王**</td>
+                <td>2025-10-04</td>
+                <td>小诺</td>
+                <td>专家门诊陪同</td>
+                <td>是</td>
+                <td>1280.00</td>
+                <td>50.00</td>
+                <td>审核通过</td>
+                <td>—</td>
+                <td><span class="link">详情</span></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td>WO202509220034</td>
+                <td>ORD202509210156</td>
+                <td>SIR202509220078</td>
+                <td>服务中</td>
+                <td>挂号费</td>
+                <td>2025-09-20</td>
+                <td><span class="status-tag st-pending">待结算</span></td>
+                <td>李芳</td>
+                <td>陈*</td>
+                <td>2025-09-18</td>
+                <td>HMC</td>
+                <td>三甲挂号代约</td>
+                <td>否</td>
+                <td>—</td>
+                <td>120.00</td>
+                <td>待审核</td>
+                <td>凭证影像模糊，建议补传</td>
+                <td><span class="link">详情</span></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td>WO202508150007</td>
+                <td>ORD202508140033</td>
+                <td>SIR202508150019</td>
+                <td>已派单</td>
+                <td>服务费</td>
+                <td>2025-08-12</td>
+                <td><span class="status-tag st-unsettled">未结算</span></td>
+                <td>赵强</td>
+                <td>刘**</td>
+                <td>2025-08-10</td>
+                <td>小诺</td>
+                <td>住院协调服务</td>
+                <td>是</td>
+                <td>3600.00</td>
+                <td>0.00</td>
+                <td>审核驳回</td>
+                <td>就诊日期与凭证不一致</td>
+                <td><span class="link">详情</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination">
+          <span>共 3 条</span>
+          <select><option>10 条/页</option><option>20 条/页</option></select>
+          <button type="button" class="page-btn" disabled>&lt;</button>
+          <button type="button" class="page-btn active">1</button>
+          <button type="button" class="page-btn">&gt;</button>
+          <span>前往</span>
+          <input type="text" value="1" style="width:36px;height:26px;text-align:center;border:1px solid #d9d9d9;" />
+          <span>页</span>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
