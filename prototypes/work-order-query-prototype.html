@@ -3,449 +3,431 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>工单账单查询 - 原型</title>
+  <title>工单账单查询</title>
   <style>
-    :root {
-      --bg: #f0f2f5;
-      --card: #fff;
-      --border: #e8e8e8;
-      --primary: #1677ff;
-      --primary-hover: #4096ff;
-      --text: rgba(0, 0, 0, 0.88);
-      --text-secondary: rgba(0, 0, 0, 0.45);
-      --danger: #ff4d4f;
-      --warning: #faad14;
-      --success: #52c41a;
-      --radius: 8px;
-      --shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 2px 8px rgba(0, 0, 0, 0.06);
-    }
-
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB",
-        "Microsoft YaHei", sans-serif;
-      font-size: 14px;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.5715;
-    }
-
-    .layout {
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      font-size: 12px;
+      color: #333;
+      background: #fff;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
 
-    .topbar {
-      background: #001529;
-      color: #fff;
-      padding: 0 24px;
-      height: 48px;
+    .page {
+      padding: 16px 20px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .watermark {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      opacity: 0.06;
+      background-image: repeating-linear-gradient(
+        -25deg,
+        transparent,
+        transparent 120px,
+        #999 120px,
+        #999 121px
+      );
+    }
+    .watermark::after {
+      content: "marcus chen  marcus2015@163.com  2025-10-09  内部系统";
+      position: absolute;
+      inset: -20%;
+      font-size: 14px;
+      color: #666;
+      transform: rotate(-25deg);
+      white-space: pre;
+      line-height: 80px;
+      word-spacing: 40px;
+    }
+
+    .content { position: relative; z-index: 1; }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #333;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e8e8e8;
+      margin-bottom: 14px;
+    }
+
+    .query-form {
+      margin-bottom: 20px;
+    }
+
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+      align-items: center;
+    }
+
+    .form-item {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-    }
-    .topbar .logo { font-weight: 600; letter-spacing: 0.5px; }
-    .topbar .badge {
-      font-size: 12px;
-      background: rgba(255, 255, 255, 0.15);
-      padding: 2px 8px;
-      border-radius: 4px;
-      color: rgba(255, 255, 255, 0.85);
-    }
-
-    .main {
-      flex: 1;
-      padding: 24px;
-      max-width: 1600px;
-      width: 100%;
-      margin: 0 auto;
-    }
-
-    .page-header {
-      margin-bottom: 16px;
-    }
-    .page-header h1 {
-      margin: 0 0 4px;
-      font-size: 20px;
-      font-weight: 600;
-    }
-    .page-header p {
-      margin: 0;
-      color: var(--text-secondary);
-      font-size: 13px;
-    }
-
-    .card {
-      background: var(--card);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      margin-bottom: 16px;
-      border: 1px solid var(--border);
-    }
-    .card-head {
-      padding: 12px 16px;
-      border-bottom: 1px solid var(--border);
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .card-head .dot {
-      width: 3px;
-      height: 14px;
-      background: var(--primary);
-      border-radius: 2px;
-    }
-    .card-body { padding: 16px; }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px 24px;
-    }
-    @media (max-width: 1100px) {
-      .form-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 640px) {
-      .form-grid { grid-template-columns: 1fr; }
-    }
-
-    .field label {
-      display: block;
+      width: 33.33%;
+      min-width: 360px;
+      padding-right: 24px;
       margin-bottom: 6px;
-      color: var(--text);
     }
-    .field label .req { color: var(--danger); margin-right: 2px; }
-    .field label .hint {
-      font-weight: normal;
-      color: var(--text-secondary);
-      font-size: 12px;
-      margin-left: 4px;
+
+    .form-item label {
+      width: 72px;
+      flex-shrink: 0;
+      text-align: right;
+      padding-right: 8px;
+      color: #333;
+      line-height: 28px;
+    }
+    .form-item label .req { color: #f5222d; margin-right: 2px; }
+
+    .control {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
     input[type="text"],
-    input[type="date"],
     select {
-      width: 100%;
-      height: 32px;
-      padding: 4px 11px;
+      height: 28px;
+      line-height: 26px;
       border: 1px solid #d9d9d9;
-      border-radius: 6px;
-      font-size: 14px;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      border-radius: 2px;
+      padding: 0 8px;
+      font-size: 12px;
+      color: #333;
+      width: 100%;
+      background: #fff;
     }
-    input:focus, select:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 2px rgba(22, 119, 255, 0.15);
-    }
+    select { color: #bfbfbf; }
+    select.has-value { color: #333; }
 
     .date-range {
       display: flex;
       align-items: center;
-      gap: 8px;
+      flex: 1;
+      gap: 6px;
     }
-    .date-range span { color: var(--text-secondary); flex-shrink: 0; }
+    .date-input {
+      flex: 1;
+      position: relative;
+    }
+    .date-input input {
+      width: 100%;
+      padding-left: 28px;
+    }
+    .date-input::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 7px;
+      width: 12px;
+      height: 12px;
+      border: 1px solid #999;
+      border-radius: 1px;
+      opacity: 0.7;
+    }
+    .date-sep { color: #999; flex-shrink: 0; }
 
     .form-actions {
-      margin-top: 16px;
-      padding-top: 16px;
-      border-top: 1px dashed var(--border);
       display: flex;
-      gap: 8px;
       justify-content: flex-end;
+      gap: 8px;
+      padding-top: 4px;
+      margin-top: 4px;
     }
 
     .btn {
-      height: 32px;
-      padding: 0 16px;
-      border-radius: 6px;
-      border: 1px solid #d9d9d9;
-      background: #fff;
+      height: 28px;
+      min-width: 64px;
+      padding: 0 14px;
+      font-size: 12px;
+      border-radius: 2px;
       cursor: pointer;
-      font-size: 14px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      border: 1px solid #1890ff;
     }
-    .btn:hover { border-color: var(--primary); color: var(--primary); }
     .btn-primary {
-      background: var(--primary);
-      border-color: var(--primary);
+      background: #1890ff;
       color: #fff;
+      border-color: #1890ff;
     }
-    .btn-primary:hover {
-      background: var(--primary-hover);
-      border-color: var(--primary-hover);
-      color: #fff;
+    .btn-default {
+      background: #fff;
+      color: #1890ff;
     }
 
-    .result-meta {
-      padding: 12px 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      border-bottom: 1px solid var(--border);
+    .list-tabs {
+      margin-bottom: 10px;
       font-size: 13px;
-      color: var(--text-secondary);
+      color: #666;
     }
-    .result-meta strong { color: var(--text); }
+    .list-tabs .active {
+      color: #1890ff;
+      font-weight: 600;
+    }
+    .list-tabs span { margin: 0 4px; color: #d9d9d9; }
 
     .table-wrap {
+      border: 1px solid #e8e8e8;
       overflow-x: auto;
-      padding: 0 0 8px;
     }
+
     table {
       width: 100%;
-      min-width: 2200px;
+      min-width: 2400px;
       border-collapse: collapse;
-      font-size: 13px;
+      table-layout: fixed;
     }
-    th, td {
-      padding: 10px 12px;
-      text-align: left;
-      border-bottom: 1px solid #f0f0f0;
-      white-space: nowrap;
-    }
-    th {
+
+    thead th {
       background: #fafafa;
+      border: 1px solid #e8e8e8;
+      padding: 8px 6px;
       font-weight: 600;
-      color: rgba(0, 0, 0, 0.65);
-      position: sticky;
-      top: 0;
-      z-index: 1;
-    }
-    tr:hover td { background: #fafafa; }
-
-    .tag {
-      display: inline-block;
-      padding: 0 7px;
-      border-radius: 4px;
+      color: #333;
+      text-align: center;
+      white-space: nowrap;
       font-size: 12px;
-      line-height: 20px;
-      border: 1px solid transparent;
     }
-    .tag-settled { background: #f6ffed; border-color: #b7eb8f; color: #389e0d; }
-    .tag-pending { background: #fff7e6; border-color: #ffd591; color: #d46b08; }
-    .tag-unsettled { background: #f5f5f5; border-color: #d9d9d9; color: rgba(0,0,0,0.65); }
-    .tag-risk { background: #fff2f0; border-color: #ffccc7; color: #cf1322; }
-    .tag-ok { background: #e6f4ff; border-color: #91caff; color: #0958d9; }
 
-    .note-icon {
-      display: inline-flex;
-      width: 16px;
-      height: 16px;
+    tbody td {
+      border: 1px solid #e8e8e8;
+      padding: 7px 6px;
+      text-align: center;
+      color: #333;
+      white-space: nowrap;
+      font-size: 12px;
+      background: #fff;
+    }
+
+    tbody tr:hover td { background: #f5faff; }
+
+    .col-check { width: 36px; }
+    .col-ops { width: 100px; }
+    .sortable::after {
+      content: "⇅";
+      font-size: 10px;
+      color: #bfbfbf;
+      margin-left: 2px;
+    }
+
+    .link {
+      color: #1890ff;
+      cursor: pointer;
+      margin: 0 4px;
+    }
+
+    .status-tag {
+      display: inline-block;
+      padding: 0 6px;
+      line-height: 18px;
+      border-radius: 2px;
+      font-size: 11px;
+    }
+    .st-settled { background: #f6ffed; color: #389e0d; border: 1px solid #b7eb8f; }
+    .st-pending { background: #fff7e6; color: #d46b08; border: 1px solid #ffd591; }
+    .st-unsettled { background: #f5f5f5; color: #666; border: 1px solid #d9d9d9; }
+
+    .tip-icon {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      line-height: 14px;
+      text-align: center;
       border-radius: 50%;
       background: #faad14;
       color: #fff;
-      font-size: 11px;
-      align-items: center;
-      justify-content: center;
-      cursor: help;
+      font-size: 10px;
       vertical-align: middle;
-      margin-left: 4px;
+      margin-left: 2px;
+      cursor: help;
     }
 
     .pagination {
-      padding: 12px 16px;
       display: flex;
-      justify-content: flex-end;
       align-items: center;
+      justify-content: flex-end;
       gap: 8px;
-      border-top: 1px solid var(--border);
+      padding: 12px 0 0;
+      font-size: 12px;
+      color: #666;
     }
-    .pagination button {
-      min-width: 32px;
-      height: 32px;
+    .pagination select {
+      width: auto;
+      height: 26px;
+    }
+    .page-btn {
+      min-width: 26px;
+      height: 26px;
       border: 1px solid #d9d9d9;
       background: #fff;
-      border-radius: 6px;
+      color: #333;
       cursor: pointer;
+      border-radius: 2px;
     }
-    .pagination button.active {
-      border-color: var(--primary);
-      color: var(--primary);
+    .page-btn.active {
+      border-color: #1890ff;
+      color: #1890ff;
     }
-
-    .prototype-banner {
-      background: #e6f4ff;
-      border: 1px solid #91caff;
-      color: #0958d9;
-      padding: 8px 16px;
-      border-radius: var(--radius);
-      margin-bottom: 16px;
-      font-size: 13px;
-    }
-
-    .wireframe-note {
-      margin-top: 24px;
-      padding: 16px;
-      background: #fff;
-      border: 1px dashed #bfbfbf;
-      border-radius: var(--radius);
-      color: var(--text-secondary);
-      font-size: 12px;
-    }
-    .wireframe-note h3 {
-      margin: 0 0 8px;
-      font-size: 14px;
-      color: var(--text);
-    }
-    .wireframe-note ul { margin: 0; padding-left: 18px; }
-    .wireframe-note li { margin-bottom: 4px; }
+    .page-btn:disabled { color: #ccc; cursor: not-allowed; }
   </style>
 </head>
 <body>
-  <div class="layout">
-    <header class="topbar">
-      <span class="logo">医疗服务运营后台</span>
-      <span class="badge">交互原型 v0.1</span>
-    </header>
+  <div class="watermark" aria-hidden="true"></div>
+  <div class="page">
+    <div class="content">
+      <section class="query-form">
+        <div class="section-title">查询条件</div>
 
-    <main class="main">
-      <div class="prototype-banner">
-        本页为「工单账单查询」网页端原型，用于评审字段、布局与交互；数据为示意，非真实接口。
-      </div>
-
-      <div class="page-header">
-        <h1>工单账单查询</h1>
-        <p>按就诊日期与多维度条件检索工单，查看结算与服务凭证相关信息。</p>
-      </div>
-
-      <!-- 查询条件 -->
-      <section class="card" aria-label="查询条件">
-        <div class="card-head"><span class="dot"></span>查询条件</div>
-        <div class="card-body">
-          <form id="queryForm" onsubmit="return false;">
-            <div class="form-grid">
-              <div class="field">
-                <label><span class="req">*</span>就诊日期<span class="hint">默认最近半年</span></label>
-                <div class="date-range">
-                  <input type="date" id="visitStart" name="visitStart" required />
-                  <span>至</span>
-                  <input type="date" id="visitEnd" name="visitEnd" required />
-                </div>
-              </div>
-
-              <div class="field">
-                <label>工单号</label>
-                <input type="text" placeholder="请输入工单号" maxlength="32" />
-              </div>
-
-              <div class="field">
-                <label>结算状态</label>
-                <select>
-                  <option value="">全部</option>
-                  <option>已结算</option>
-                  <option>待结算</option>
-                  <option>未结算</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label>工单状态</label>
-                <select>
-                  <option value="">全部</option>
-                  <option>待派单</option>
-                  <option>已派单</option>
-                  <option>服务中</option>
-                  <option>已完成</option>
-                  <option>已取消</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label>签约主体</label>
-                <select>
-                  <option value="">全部</option>
-                  <option>小诺</option>
-                  <option>HMC</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label>账单类型</label>
-                <select>
-                  <option value="">全部</option>
-                  <option>服务费</option>
-                  <option>挂号费</option>
-                </select>
+        <div class="form-row">
+          <div class="form-item">
+            <label><span class="req">*</span>就诊日期</label>
+            <div class="control">
+              <div class="date-range">
+                <div class="date-input"><input type="text" id="visitStart" value="2025-04-09" readonly /></div>
+                <span class="date-sep">-</span>
+                <div class="date-input"><input type="text" id="visitEnd" value="2025-10-09" readonly /></div>
               </div>
             </div>
-
-            <div class="form-actions">
-              <button type="button" class="btn" id="btnReset">重置</button>
-              <button type="submit" class="btn btn-primary" id="btnQuery">查询</button>
+          </div>
+          <div class="form-item">
+            <label>工单号</label>
+            <div class="control">
+              <input type="text" placeholder="请输入工单号" />
             </div>
-          </form>
+          </div>
+          <div class="form-item">
+            <label>结算状态</label>
+            <div class="control">
+              <select>
+                <option>请选择结算状态</option>
+                <option>已结算</option>
+                <option>待结算</option>
+                <option>未结算</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-item">
+            <label>工单状态</label>
+            <div class="control">
+              <select>
+                <option>请选择工单状态</option>
+                <option>待派单</option>
+                <option>已派单</option>
+                <option>服务中</option>
+                <option>已完成</option>
+                <option>已取消</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-item">
+            <label>签约主体</label>
+            <div class="control">
+              <select>
+                <option>请选择签约主体</option>
+                <option>小诺</option>
+                <option>HMC</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-item">
+            <label>账单类型</label>
+            <div class="control">
+              <select>
+                <option>请选择账单类型</option>
+                <option>服务费</option>
+                <option>挂号费</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-primary">查询</button>
+          <button type="button" class="btn btn-default">重置</button>
+          <button type="button" class="btn btn-default">清单导出</button>
         </div>
       </section>
 
-      <!-- 查询结果 -->
-      <section class="card" aria-label="查询结果">
-        <div class="card-head"><span class="dot"></span>查询结果</div>
-        <div class="result-meta">
-          <span>共 <strong id="totalCount">3</strong> 条记录</span>
-          <span>就诊日期默认范围：<strong id="rangeLabel">—</strong></span>
+      <section class="result-section">
+        <div class="list-tabs">
+          <span class="active">账单工单列表(3)</span>
+          <span>/</span>
+          <span>待结算(1)</span>
+          <span>/</span>
+          <span>凭证异常(1)</span>
         </div>
+
         <div class="table-wrap">
           <table>
             <thead>
               <tr>
-                <th>工单号</th>
+                <th class="col-check"><input type="checkbox" /></th>
+                <th class="sortable">工单号</th>
                 <th>订单号</th>
                 <th>服务实施记录号</th>
                 <th>工单状态</th>
                 <th>账单类型</th>
-                <th>就诊日期</th>
+                <th class="sortable">就诊日期</th>
                 <th>结算状态</th>
                 <th>派单对接人</th>
                 <th>客户姓名</th>
-                <th>派单日期</th>
+                <th class="sortable">派单日期</th>
                 <th>签约主体</th>
                 <th>服务名称</th>
                 <th>是否指定医生（权益）</th>
-                <th>服务价格（元）</th>
+                <th>服务价格</th>
                 <th>
-                  挂号费（元）
-                  <span class="note-icon" title="发送结算单前请与派单人核对">!</span>
+                  挂号费
+                  <span class="tip-icon" title="发送结算单前请与派单人核对">!</span>
                 </th>
                 <th>服务凭证审核状态</th>
                 <th>服务凭证风险提示</th>
+                <th class="col-ops">操作</th>
               </tr>
             </thead>
-            <tbody id="resultBody">
+            <tbody>
               <tr>
+                <td><input type="checkbox" /></td>
                 <td>WO202510080012</td>
                 <td>ORD202510070889</td>
                 <td>SIR202510080045</td>
                 <td>已完成</td>
                 <td>服务费</td>
                 <td>2025-10-05</td>
-                <td><span class="tag tag-settled">已结算</span></td>
+                <td><span class="status-tag st-settled">已结算</span></td>
                 <td>张明</td>
-                <td>王小*</td>
+                <td>王**</td>
                 <td>2025-10-04</td>
                 <td>小诺</td>
                 <td>专家门诊陪同</td>
                 <td>是</td>
-                <td>1,280.00</td>
+                <td>1280.00</td>
                 <td>50.00</td>
-                <td><span class="tag tag-ok">审核通过</span></td>
+                <td>审核通过</td>
                 <td>—</td>
+                <td><span class="link">详情</span></td>
               </tr>
               <tr>
+                <td><input type="checkbox" /></td>
                 <td>WO202509220034</td>
                 <td>ORD202509210156</td>
                 <td>SIR202509220078</td>
                 <td>服务中</td>
                 <td>挂号费</td>
                 <td>2025-09-20</td>
-                <td><span class="tag tag-pending">待结算</span></td>
+                <td><span class="status-tag st-pending">待结算</span></td>
                 <td>李芳</td>
                 <td>陈*</td>
                 <td>2025-09-18</td>
@@ -454,92 +436,47 @@
                 <td>否</td>
                 <td>—</td>
                 <td>120.00</td>
-                <td><span class="tag tag-pending">待审核</span></td>
+                <td>待审核</td>
                 <td>凭证影像模糊，建议补传</td>
+                <td><span class="link">详情</span></td>
               </tr>
               <tr>
+                <td><input type="checkbox" /></td>
                 <td>WO202508150007</td>
                 <td>ORD202508140033</td>
                 <td>SIR202508150019</td>
                 <td>已派单</td>
                 <td>服务费</td>
                 <td>2025-08-12</td>
-                <td><span class="tag tag-unsettled">未结算</span></td>
+                <td><span class="status-tag st-unsettled">未结算</span></td>
                 <td>赵强</td>
                 <td>刘**</td>
                 <td>2025-08-10</td>
                 <td>小诺</td>
                 <td>住院协调服务</td>
                 <td>是</td>
-                <td>3,600.00</td>
+                <td>3600.00</td>
                 <td>0.00</td>
-                <td><span class="tag tag-risk">审核驳回</span></td>
+                <td>审核驳回</td>
                 <td>就诊日期与凭证不一致</td>
+                <td><span class="link">详情</span></td>
               </tr>
             </tbody>
           </table>
         </div>
+
         <div class="pagination">
-          <span style="margin-right:8px;color:var(--text-secondary);">每页 20 条</span>
-          <button type="button" class="active">1</button>
-          <button type="button">2</button>
-          <button type="button">下一页</button>
+          <span>共 3 条</span>
+          <select><option>10 条/页</option><option>20 条/页</option></select>
+          <button type="button" class="page-btn" disabled>&lt;</button>
+          <button type="button" class="page-btn active">1</button>
+          <button type="button" class="page-btn">&gt;</button>
+          <span>前往</span>
+          <input type="text" value="1" style="width:36px;height:26px;text-align:center;border:1px solid #d9d9d9;" />
+          <span>页</span>
         </div>
       </section>
-
-      <aside class="wireframe-note">
-        <h3>原型说明（评审用）</h3>
-        <ul>
-          <li><strong>就诊日期</strong>：必录；进入页面时默认「今天起往前 180 天」；结束日期不可早于开始日期。</li>
-          <li><strong>客户姓名</strong>：列表展示保留姓氏，名字末位以 * 脱敏（示例：王小*、陈*）。</li>
-          <li><strong>挂号费列</strong>：表头带提示「发送结算单前请与派单人核对」。</li>
-          <li><strong>工单状态</strong>：枚举待业务确认后可与后端字典对齐；原型中采用常见状态占位。</li>
-          <li><strong>结果区</strong>：列较多时横向滚动；正式版可考虑列设置、导出 Excel。</li>
-        </ul>
-      </aside>
-    </main>
+    </div>
   </div>
-
-  <script>
-    function formatDate(d) {
-      const y = d.getFullYear();
-      const m = String(d.getMonth() + 1).padStart(2, "0");
-      const day = String(d.getDate()).padStart(2, "0");
-      return `${y}-${m}-${day}`;
-    }
-
-    function initDefaultDateRange() {
-      const end = new Date();
-      const start = new Date();
-      start.setMonth(start.getMonth() - 6);
-      const startEl = document.getElementById("visitStart");
-      const endEl = document.getElementById("visitEnd");
-      startEl.value = formatDate(start);
-      endEl.value = formatDate(end);
-      document.getElementById("rangeLabel").textContent =
-        startEl.value + " ~ " + endEl.value;
-    }
-
-    document.getElementById("btnReset").addEventListener("click", () => {
-      document.getElementById("queryForm").reset();
-      initDefaultDateRange();
-    });
-
-    document.getElementById("btnQuery").addEventListener("click", () => {
-      const start = document.getElementById("visitStart").value;
-      const end = document.getElementById("visitEnd").value;
-      if (!start || !end) {
-        alert("请选择就诊日期范围");
-        return;
-      }
-      if (start > end) {
-        alert("开始日期不能晚于结束日期");
-        return;
-      }
-      document.getElementById("rangeLabel").textContent = start + " ~ " + end;
-    });
-
-    initDefaultDateRange();
-  </script>
 </body>
 </html>
