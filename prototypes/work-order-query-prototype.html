@@ -139,10 +139,15 @@
 
     .form-actions {
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
+      align-items: center;
       gap: 8px;
       padding-top: 4px;
       margin-top: 4px;
+    }
+    .form-actions-right {
+      display: flex;
+      gap: 8px;
     }
 
     .btn {
@@ -278,6 +283,78 @@
       color: #1890ff;
     }
     .page-btn:disabled { color: #ccc; cursor: not-allowed; }
+
+    .modal-mask {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-mask.open { display: flex; }
+
+    .modal {
+      width: 520px;
+      background: #fff;
+      border-radius: 2px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    .modal-header {
+      padding: 12px 16px;
+      border-bottom: 1px solid #e8e8e8;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+    }
+    .modal-close {
+      border: none;
+      background: transparent;
+      font-size: 18px;
+      line-height: 1;
+      color: #999;
+      cursor: pointer;
+    }
+    .modal-body { padding: 16px 16px 8px; }
+    .modal-tip {
+      font-size: 12px;
+      color: #999;
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+    .modal-form-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .modal-form-item label {
+      width: 72px;
+      text-align: right;
+      padding-right: 8px;
+      flex-shrink: 0;
+      color: #333;
+    }
+    .modal-form-item label .req { color: #f5222d; margin-right: 2px; }
+    .modal-form-item .control { flex: 1; }
+    .modal-form-item input {
+      width: 100%;
+      height: 28px;
+      border: 1px solid #d9d9d9;
+      border-radius: 2px;
+      padding: 0 8px;
+      font-size: 12px;
+    }
+    .modal-footer {
+      padding: 10px 16px 16px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      border-top: 1px solid #f0f0f0;
+    }
   </style>
 </head>
 <body>
@@ -353,10 +430,28 @@
           </div>
         </div>
 
+        <div class="form-row">
+          <div class="form-item">
+            <label>工单类型</label>
+            <div class="control">
+              <select>
+                <option>请选择工单类型</option>
+                <option>门诊服务</option>
+                <option>挂号服务</option>
+                <option>住院协调</option>
+                <option>检查预约</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
         <div class="form-actions">
-          <button type="button" class="btn btn-primary">查询</button>
-          <button type="button" class="btn btn-default">重置</button>
-          <button type="button" class="btn btn-default">清单导出</button>
+          <button type="button" class="btn btn-default" id="btnCompanyAccount">公司账号维护</button>
+          <div class="form-actions-right">
+            <button type="button" class="btn btn-primary">查询</button>
+            <button type="button" class="btn btn-default">重置</button>
+            <button type="button" class="btn btn-default">清单导出</button>
+          </div>
         </div>
       </section>
 
@@ -380,6 +475,7 @@
                 <th>工单状态</th>
                 <th>账单类型</th>
                 <th class="sortable">就诊日期</th>
+                <th>就诊医院</th>
                 <th>结算状态</th>
                 <th>派单对接人</th>
                 <th>客户姓名</th>
@@ -406,6 +502,7 @@
                 <td>已完成</td>
                 <td>服务费</td>
                 <td>2025-10-05</td>
+                <td>北京协和医院</td>
                 <td><span class="status-tag st-settled">已结算</span></td>
                 <td>张明</td>
                 <td>王**</td>
@@ -427,6 +524,7 @@
                 <td>服务中</td>
                 <td>挂号费</td>
                 <td>2025-09-20</td>
+                <td>上海交通大学医学院附属瑞金医院</td>
                 <td><span class="status-tag st-pending">待结算</span></td>
                 <td>李芳</td>
                 <td>陈*</td>
@@ -448,6 +546,7 @@
                 <td>已派单</td>
                 <td>服务费</td>
                 <td>2025-08-12</td>
+                <td>四川大学华西医院</td>
                 <td><span class="status-tag st-unsettled">未结算</span></td>
                 <td>赵强</td>
                 <td>刘**</td>
@@ -478,5 +577,50 @@
       </section>
     </div>
   </div>
+
+  <div class="modal-mask" id="companyAccountModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <div class="modal-header">
+        <span id="modalTitle">公司账号信息维护</span>
+        <button type="button" class="modal-close" aria-label="关闭">×</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-tip">维护结算收款使用的公司对公账户信息，保存后将用于结算单展示与打款核对。</p>
+        <div class="modal-form-item">
+          <label><span class="req">*</span>开户行</label>
+          <div class="control">
+            <input type="text" value="中国工商银行北京朝阳支行" />
+          </div>
+        </div>
+        <div class="modal-form-item">
+          <label><span class="req">*</span>账户名</label>
+          <div class="control">
+            <input type="text" value="北京小诺健康科技有限公司" />
+          </div>
+        </div>
+        <div class="modal-form-item">
+          <label><span class="req">*</span>账号</label>
+          <div class="control">
+            <input type="text" value="6222 0202 0103 1234 567" />
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default">取消</button>
+        <button type="button" class="btn btn-primary">保存</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("btnCompanyAccount")?.addEventListener("click", () => {
+      document.getElementById("companyAccountModal")?.classList.add("open");
+    });
+    document.querySelectorAll(".modal-close, .modal-footer .btn-default").forEach((el) => {
+      el.addEventListener("click", () => {
+        document.getElementById("companyAccountModal")?.classList.remove("open");
+      });
+    });
+  </script>
 </body>
 </html>
